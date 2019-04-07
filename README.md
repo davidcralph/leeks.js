@@ -1,4 +1,5 @@
-# leeks.js
+# leeks.js <img src='https://www.healthbenefitstimes.com/9/gallery/leeks/Leeks.jpg' height='64' width='64'>
+          
 Simple ANSI styling for your terminal. 
 
 ## Features
