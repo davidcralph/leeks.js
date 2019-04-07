@@ -6,7 +6,6 @@ Simple ANSI styling for your terminal.
 * Chalk-like API
 
 ## Usage
-(from ``test.js``):
 ```js
 const leeks = require('./index.js');
 
@@ -71,9 +70,7 @@ strikethrough
 ```
 
 ## Other
-``
-leeks.supportsColour/leeks.supportsColor
-``
+``leeks.supportsColour/leeks.supportsColor``
 
 ## Credits
 [ansicolors](https://github.com/thlorenz/ansicolors) and [ansistyles](https://github.com/thlorenz/ansistyles) - Reference

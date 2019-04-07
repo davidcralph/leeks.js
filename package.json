@@ -1,0 +1,28 @@
+{
+    "name": "leeks.js",
+    "version": "0.0.1",
+    "description": "Simple ANSI styling for your terminal.",
+    "author": "David \"ohlookitsderpy\" Ralph",
+    "license": "MIT",
+    "main": "index.js",
+    "bugs": {
+        "url": "https://github.com/ohlookitsderpy/leeks.js/issues"
+    },
+    "homepage": "https://github.com/ohlookitsderpy/leeks.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ohlookitsderpy/leeks.js"
+    },
+    "keywords": [
+        "color",
+        "colour",
+        "colors",
+        "colours",
+        "ansi",
+        "style",
+        "styles",
+        "terminal",
+        "console",
+        "lightweight"
+    ]
+}
