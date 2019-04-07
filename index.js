@@ -3,7 +3,7 @@
 // Declarations
 const d = require('./data.js');
 
-// Colours
+/**Change the colour of the given text! (List: https://github.com/ohlookitsderpy/leeks.js/README.md)*/
 let colors = [];
 
 for (let k in d.colors) {    
@@ -14,7 +14,7 @@ for (let k in d.colors) {
     colors[k] = (s) => { return o + s + c; };
 };
 
-// Styles
+/**Change the style of the given text! (List: https://github.com/ohlookitsderpy/leeks.js/README.md)*/
 let styles = [];
 
 for (let k in d.styles) {    
@@ -25,8 +25,19 @@ for (let k in d.styles) {
     styles[k] = (s) => { return o + s + c; };
 };
 
-// Exports
-module.exports.colors  = colors;
-module.exports.colours = colors;
+/**Check if colours are supported. (From https://github.com/jorgebucaran/colorette)*/
+let supported = (process.env.FORCE_COLOR || process.platform === 'win32' || (process.stdout.isTTY && process.env.TERM && process.env.TERM !== 'dumb'));
+
+// EXPORTS
+module.exports.colors         = colors;
+module.exports.colours        = colors;
+module.exports.supportsColor  = supported;
+module.exports.supportsColour = supported;
+
+// Grey is the common spelling used in the UK/Canada, Gray is the USA spelling
+module.exports.colors.gray    = colors.blackBright;
+module.exports.colours.grey   = colors.blackBright;
+module.exports.colors.bgGray  = colors.bgBlackBright;
+module.exports.colours.bgGrey = colors.bgBlackBright;
 
 module.exports.styles = styles;
