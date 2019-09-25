@@ -1,25 +1,12 @@
-# leeks.js <img src='https://www.healthbenefitstimes.com/9/gallery/leeks/Leeks.jpg' height='64' width='64'>
-          
+# leeks.js <img src='https://u.derpyenterprises.org/IDGl' height='64' width='64'>
 Simple ANSI styling for your terminal. 
 
 ## Features
 * Ultra lightweight (0 dependencies and under 10kb!)
-* Chalk-like API
+* [Chalk](https://github.com/chalk/chalk)-like API
 
 ## Usage
-```js
-const leeks = require('./index.js');
-
-const error = leeks.colors.red;
-console.log(error('Error - Everything went YEET'));
-
-console.log(leeks.colors.red('Hello') + leeks.colors.green(' I like leeks!'));
-console.log(leeks.colors.bgRed('Hello') + leeks.colors.bgGreen(' I like leeks!'));
-console.log(leeks.colors.blue(leeks.styles.underline('Hello!')));
-
-console.log(leeks.colours.grey('yeet'));
-console.log(leeks.colors.gray('yeet'));
-```
+See ``test.js``
 
 ## Colours
 ```
@@ -71,7 +58,7 @@ strikethrough
 ```
 
 ## Other
-``leeks.supportsColour/leeks.supportsColor``
+``supportsColour/supportsColor``
 
 ## Credits
 [ansicolors](https://github.com/thlorenz/ansicolors) and [ansistyles](https://github.com/thlorenz/ansistyles) - Reference
