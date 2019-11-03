@@ -1,6 +1,6 @@
 {
     "name": "leeks.js",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "Simple ANSI styling for your terminal.",
     "author": "David \"ohlookitsderpy\" Ralph",
     "license": "MIT",
@@ -23,6 +23,8 @@
         "styles",
         "terminal",
         "console",
-        "lightweight"
+        "lightweight",
+        "rgb",
+        "256"
     ]
 }
