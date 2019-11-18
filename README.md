@@ -4,7 +4,7 @@ Simple ANSI styling for your terminal.
 ## Features
 * Ultra lightweight (0 dependencies and under 10kb!)
 * [Chalk](https://github.com/chalk/chalk)-like API
-* Supports 4-bit, 256 and full RGB
+* Supports 4-bit, 8-bit and full RGB
 
 ## Usage
 See ``test.js``
