@@ -1,4 +1,3 @@
-//* IMPORTS
 const d = require('./data.js');
 
 /**Change the colour of the given text. (List: https://github.com/ohlookitsderpy/leeks.js/README.md)*/
@@ -13,26 +12,17 @@ for (let s in d.styles) styles[s] = (t) => { return `\x1b[${d.styles[s]}m` + t +
 let supports = (process.env.FORCE_COLOR || process.platform === 'win32' || (process.stdout.isTTY && process.env.TERM && process.env.TERM !== 'dumb'));
 
 /**Change the colour of the given text using 8-bit colours.*/
-const eightBit = (i, t) => {
-    return '\033[38;5;' + i + `m${t}\x1b[0m`;
-}
+const eightBit = (i, t) => { return '\033[38;5;' + i + `m${t}\x1b[0m`; }
 
 /**Change the background colour of the given text using 8-bit colours.*/
-const eightBitBg = (i, t) => {
-    return '\033[48;5;' + i + `m${t}\x1b[0m`;
-}
+const eightBitBg = (i, t) => { return '\033[48;5;' + i + `m${t}\x1b[0m`; }
 
 /**Change the colour of the given text using RGB.*/
-const rgb = (r, g, b, t) => {
-    return '\033[38;2;' + `${r};` + `${g};` + `${b}m${t}\x1b[0m`;
-}
+const rgb = (r, g, b, t) => { return '\033[38;2;' + `${r};` + `${g};` + `${b}m${t}\x1b[0m`; }
 
 /**Change the background colour of the given text using RGB.*/
-const rgbBg = (r, g, b, t) => {
-    return '\033[48;2;' + `${r};` + `${g};` + `${b}m${t}\x1b[0m`;
-}
+const rgbBg = (r, g, b, t) => { return '\033[48;2;' + `${r};` + `${g};` + `${b}m${t}\x1b[0m`; }
 
-//* EXPORTS
 module.exports.colors         = colors;
 module.exports.colours        = colors;
 module.exports.supportsColor  = supports;
