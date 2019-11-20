@@ -5,6 +5,7 @@
     "author": "David \"ohlookitsderpy\" Ralph",
     "license": "MIT",
     "main": "index.js",
+    "types": "index.d.ts",
     "bugs": {
         "url": "https://github.com/ohlookitsderpy/leeks.js/issues"
     },
