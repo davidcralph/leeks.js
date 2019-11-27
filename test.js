@@ -15,5 +15,3 @@ console.log(leeks.eightBitBg('32', 'hello'));
 
 console.log(leeks.rgb('114', '137', '218', 'hello'));
 console.log(leeks.rgbBg('114', '137', '218', 'hello'));
-
-console.log('\e]8;;http://example.com\e\\This is a link\e]8;;\e\\\n')
