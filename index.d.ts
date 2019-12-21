@@ -14,5 +14,5 @@ declare module 'leeks.js' {
     export const eightBit: (i: string, t: string) => string;
     export const eightBitBg: (i: string, t: string) => string;
     export const rgb: (r: number, g: number, b: number, t: string) => string;
-    export const rgbBg: (r: number, g: number, b: number) => string;
+    export const rgbBg: (r: number, g: number, b: number, t: string) => string;
 }
