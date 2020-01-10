@@ -15,3 +15,6 @@ console.log(leeks.eightBitBg('32', 'hello'));
 
 console.log(leeks.rgb('114', '137', '218', 'hello'));
 console.log(leeks.rgbBg('114', '137', '218', 'hello'));
+
+console.log(leeks.hex('#7289da', 'hello'));
+console.log(leeks.hexBg('#7289da', 'hello'));
