@@ -4,7 +4,7 @@ Simple ANSI styling for your terminal.
 ## Features
 * Ultra lightweight (0 dependencies and under 10kb!)
 * [Chalk](https://github.com/chalk/chalk)-like API
-* Supports 4-bit, 8-bit and full RGB
+* Supports 4-bit, 8-bit and full RGB (+ hex codes!)
 
 ## Usage
 See ``test.js``
@@ -64,6 +64,8 @@ strikethrough
 8bitBg
 rgb
 rgbBg
+hex
+hexBg
 supportsColour/supportsColor
 ```
 
@@ -71,3 +73,5 @@ supportsColour/supportsColor
 [ansicolors](https://github.com/thlorenz/ansicolors), [ansistyles](https://github.com/thlorenz/ansistyles) and [StackOverflow](https://stackoverflow.com/a/33206814) - Reference
 
 [colorette](https://github.com/jorgebucaran/colorette) - Colour support checking code
+
+and all the contributors <3

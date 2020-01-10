@@ -5,21 +5,15 @@
  */
 const d = require('./data.js');
 
-/**
- * Change the colour of the given text. (List: https://github.com/ohlookitsderpy/leeks.js/README.md)
- */
+/** Change the colour of the given text. (List: https://github.com/ohlookitsderpy/leeks.js/README.md)*/
 let colors = [];
 for (let c in d.colors) colors[c] = (t) => `\x1b[${d.colors[c]}m${t}\x1b[0m`;
 
-/**
- * Change the style of the given text. (List: https://github.com/ohlookitsderpy/leeks.js/README.md)
- */
+/** Change the style of the given text. (List: https://github.com/ohlookitsderpy/leeks.js/README.md)*/
 let styles = [];
 for (let s in d.styles) styles[s] = (t) => `\x1b[${d.styles[s]}m${t}\x1b[0m`;
 
-/**
- * Check if colours are supported. (From https://github.com/jorgebucaran/colorette)
- */
+/** Check if colours are supported. (From https://github.com/jorgebucaran/colorette)*/
 let supports = !('NO_COLOR' in process.env) && process.env.FORCE_COLOR !== '0' && (process.env.FORCE_COLOR || process.platform === 'win32' || (process.stdout.isTTY && process.env.TERM && process.env.TERM !== 'dumb'));
 
 /**
@@ -63,11 +57,8 @@ module.exports.rgbBg = (rgb, t) => {
  * @credit [Stackoverflow](https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb)
  */
 module.exports.hex = (hex, t) => {
-	const h = hex.replace('#', '');
-	const bigint = parseInt(h, 16);
-
-	const [r, g, b] = [(bigint >> 16) & 255, (bigint >> 8) & 255, bigint & 255];
-	return module.exports.rgb([r, g, b], t);
+	const bigint = parseInt(hex.replace('#', ''), 16);
+	return module.exports.rgb([(bigint >> 16) & 255, (bigint >> 8) & 255, bigint & 255], t);
 };
 
 /**
@@ -77,11 +68,8 @@ module.exports.hex = (hex, t) => {
  * @credit [Stackoverflow](https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb)
  */
 module.exports.hexBg = (hex, t) => {
-	const h = hex.replace('#', '');
-	const bigint = parseInt(h, 16);
-
-	const [r, g, b] = [(bigint >> 16) & 255, (bigint >> 8) & 255, bigint & 255];
-	return module.exports.rgbBg([r, g, b], t);
+	const bigint = parseInt(hex.replace('#', ''), 16);
+	return module.exports.rgbBg([(bigint >> 16) & 255, (bigint >> 8) & 255, bigint & 255], t);
 };
 
 module.exports.colors = colors;

@@ -6,29 +6,19 @@ declare module 'leeks.js' {
     'bgBlackBright' | 'bgRedBright' | 'bgGreenBright' | 'bgBlueBright' | 'bgMagentaBright' | 'bgCyanBright' | 'bgWhiteBright' | 'bgYellowBright' |
     'bgGray' | 'bgGrey';
     
-    /**
-     * Alias for `colours`, for the american people
-     */
+    /**Alias for `colours`*/
     export const colors: { [x in Colors]: (t: string) => string; };
 
-    /**
-     * Change the colour of the given text. (List: https://github.com/ohlookitsderpy/leeks.js/README.md)
-     */
+    /** Change the colour of the given text. (List: https://github.com/ohlookitsderpy/leeks.js/README.md)*/
     export const colours: { [x in Colors]: (t: string) => string };
 
-    /**
-     * Change the style of the given text. (List: https://github.com/ohlookitsderpy/leeks.js/README.md)
-     */
+    /** Change the style of the given text. (List: https://github.com/ohlookitsderpy/leeks.js/README.md)*/
     export const styles: { [x in Styles]: (t: string) => string };
 
-    /**
-     * Alias for `supportsColour`, for the american people
-     */
+    /** Alias for `supportsColour`*/
     export const supportsColor: boolean;
 
-    /**
-     * Check if colours are supported. (From https://github.com/jorgebucaran/colorette)
-     */
+    /** Check if colours are supported. (From https://github.com/jorgebucaran/colorette)*/
     export const supportsColour: boolean;
 
     /**
