@@ -19,21 +19,21 @@ let supports = !('NO_COLOR' in process.env) && process.env.FORCE_COLOR !== '0' &
 /**
  * Change the colour of the given text using 8-bit colours.
  * @param {string} i The 8-bit color to use
- * @param {string} t The text to show with the 8-bit color
+ * @param {string} t The text to show with the 8-bit colour
  */
 module.exports.eightBit = (i, t) => '\033' + `[38;5;${i}m${t}\x1b[0m`;
 
 /**
  * Change the background colour of the given text using 8-bit colours.
  * @param {string} i The 8-bit color to use
- * @param {string} t The text to show with the 8-bit color
+ * @param {string} t The text to show with the 8-bit colour
  */
 module.exports.eightBitBg = (i, t) => '\033' + `[48;5;${i}m${t}\x1b[0m`;
 
 /**
  * Change the colour of the given text using RGB.
  * @param {[number, number, number]} rgb An array of the RGB to use
- * @param {string} t The text to show with the RGB color
+ * @param {string} t The text to show with the RGB colour
  */
 module.exports.rgb = (rgb, t) => {
 	const [r, g, b] = rgb;
@@ -43,7 +43,7 @@ module.exports.rgb = (rgb, t) => {
 /**
  * Change the background colour of the given text using RGB.
  * @param {[number, number, number]} rgb An array of the RGB to use
- * @param {string} t The text to show with the RGB color
+ * @param {string} t The text to show with the RGB colour
  */
 module.exports.rgbBg = (rgb, t) => {
 	const [r, g, b] = rgb;
@@ -53,7 +53,7 @@ module.exports.rgbBg = (rgb, t) => {
 /**
  * Change the colour of the given text using hexadecimals.
  * @param {string} hex The hex to use
- * @param {string} t The text to show with the hexadecimal
+ * @param {string} t The text to show with the hexadecimal colour
  * @credit [Stackoverflow](https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb)
  */
 module.exports.hex = (hex, t) => {
@@ -63,8 +63,8 @@ module.exports.hex = (hex, t) => {
 
 /**
  * Change the background colour of the given text using hexadecimals.
- * @param {string} hex The hex to ue
- * @param {string} t The text to show with the hexadecimal
+ * @param {string} hex The hex to use
+ * @param {string} t The text to show with the hexadecimal colour
  * @credit [Stackoverflow](https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb)
  */
 module.exports.hexBg = (hex, t) => {
