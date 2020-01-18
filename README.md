@@ -70,8 +70,10 @@ supportsColour/supportsColor
 ```
 
 ## Credits
-[ansicolors](https://github.com/thlorenz/ansicolors), [ansistyles](https://github.com/thlorenz/ansistyles) and [StackOverflow](https://stackoverflow.com/a/33206814) - Reference
+[ansicolors](https://github.com/thlorenz/ansicolors), [ansistyles](https://github.com/thlorenz/ansistyles) and [Stack Overflow](https://stackoverflow.com/a/33206814) - Reference
 
 [colorette](https://github.com/jorgebucaran/colorette) - Colour support checking code
+
+[Stack Overflow](https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb) - Hex support
 
 and all the contributors <3
