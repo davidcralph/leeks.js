@@ -14,9 +14,9 @@ let styles = [];
 for (let s in d.styles) styles[s] = (t) => `\x1b[${d.styles[s]}m${t}\x1b[0m`;
 
 /** 
-  * Check if colours are supported.
-  * @credit [Colorette](https://github.com/jorgebucaran/colorette)
-  */
+ * Check if colours are supported.
+ * @credit [Colorette](https://github.com/jorgebucaran/colorette)
+ */
 let supports = !('NO_COLOR' in process.env) && process.env.FORCE_COLOR !== '0' && (process.env.FORCE_COLOR || process.platform === 'win32' || (process.stdout.isTTY && process.env.TERM && process.env.TERM !== 'dumb'));
 
 /**
