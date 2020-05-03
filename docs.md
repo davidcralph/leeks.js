@@ -1,4 +1,5 @@
 # leeks.js
+[NPM](https://www.npmjs.com/package/leeks.js)   |   [GitHub](https://github.com/ohlookitsderpy/leeks.js)
 
  <img src='https://leeks.js.org/img/leeks-logo.png' height='90' width='90'>
  
@@ -71,12 +72,3 @@ hex
 hexBg
 supportsColour/supportsColor
 ```
-
-## Credits
-[ansicolors](https://github.com/thlorenz/ansicolors), [ansistyles](https://github.com/thlorenz/ansistyles) and [Stack Overflow](https://stackoverflow.com/a/33206814) - Reference
-
-[colorette](https://github.com/jorgebucaran/colorette) - Colour support checking code
-
-[Stack Overflow](https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb) - Hex support
-
-and all the contributors <3
