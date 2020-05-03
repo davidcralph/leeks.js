@@ -1,4 +1,4 @@
-# leeks.js
+# [leeks.js](https://leeks.js.org)
 [NPM](https://www.npmjs.com/package/leeks.js)   |   [GitHub](https://github.com/ohlookitsderpy/leeks.js)
 
  <img src='https://leeks.js.org/img/leeks-logo.png' height='90' width='90'>
