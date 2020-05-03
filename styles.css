@@ -44,24 +44,11 @@ body {
     text-decoration: underline;
 }
 
-/* .left a:hover,
-.left a:active {
-    background-color: white;
-    color: var(--primary);
-} */
-
 .right a:link,
 .right a:visited {
     color: var(--primary);
     text-decoration: underline;
 }
-
-/* .right a:hover,
-.right a:active {
-    background-color: var(--primary);
-    color: white;
-} */
-
 
 .logo {
     width: 30%;
@@ -100,7 +87,6 @@ body {
     display: inline;
     font-size: 1.8rem;
     margin-left: 1.8%;
-    /* padding: 0px 0px; */
 }
 
 ::selection {
@@ -108,22 +94,6 @@ body {
     color: white;
     text-shadow: black 1px 1px 1px;
 }
-
-/* svg {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    top: 0;
-    left: 0;
-    position: absolute;
-    z-index: -1;
-}
-
-path {
-    stroke: none;
-    fill: var(--primary);
-} */
-
 
 #title-by {
     display: block;
@@ -142,15 +112,12 @@ h1 {
     .left {
         position: static;
         width: 100%;
-        /* left: 0; */
-        /* bottom: 50%; */
     }
 
     .right {
         position: relative;
         width: 100%;
         left: -4%;
-        /* top: 50%; */
     }
 
     .logo {
