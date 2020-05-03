@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+:root {
+    --primary: #2DCC70;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    overflow: hidden;
+}
+
+.left {
+    color: white;
+    border: none;
+    background: var(--primary);
+    padding: 2%;
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    right: 46%;
+    top: 0;
+    text-align: left;
+}
+
+.right {
+    color: var(--primary);
+    border: none;
+    background: white;
+    padding: 2%;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    text-align: right;
+}
+
+
+.left a:link,
+.left a:visited {
+    color: white;
+    text-decoration: underline;
+}
+
+/* .left a:hover,
+.left a:active {
+    background-color: white;
+    color: var(--primary);
+} */
+
+.right a:link,
+.right a:visited {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+/* .right a:hover,
+.right a:active {
+    background-color: var(--primary);
+    color: white;
+} */
+
+
+.logo {
+    width: 30%;
+    padding: 2%;
+    border-radius: 15px;
+    box-shadow: 0 1px 10px;
+}
+
+#left-logo {
+    background: white;
+}
+
+#right-logo {
+    background: var(--primary);
+}
+
+.text {
+    margin-top: 4%;
+}
+
+.left .text {
+    margin-right: 6%;
+}
+
+.right .text {
+    margin-left: 6%;
+}
+
+.icons {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.icons li {
+    display: inline;
+    font-size: 1.8rem;
+    margin-left: 1.8%;
+    /* padding: 0px 0px; */
+}
+
+::selection {
+    background-color: var(--primary);
+    color: white;
+    text-shadow: black 1px 1px 1px;
+}
+
+/* svg {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+path {
+    stroke: none;
+    fill: var(--primary);
+} */
+
+
+#title-by {
+    display: block;
+    font-size: 1.2rem;
+}
+
+h1 {
+    text-shadow: 0 1px 1px;
+}
+
+@media only screen and (max-width: 800px) {
+    body {
+        overflow-y: scroll;
+    }
+
+    .left {
+        position: static;
+        width: 100%;
+        /* left: 0; */
+        /* bottom: 50%; */
+    }
+
+    .right {
+        position: relative;
+        width: 100%;
+        left: -4%;
+        /* top: 50%; */
+    }
+
+    .logo {
+        width: 20%;
+    }
+}
