@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<!--
+    leeks.js & leekslazylogger homepage (leeks.js.org)
+    made by eartharoid
+    Copyright (C) 2020 ohlookitsderpy and eartharoid
+-->
+<html>
+
+<head>
+    <title>leeks.js & leekslazylogger</title>
+
+    <!--  META DATA  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="title" content="leeks.js & leekslazylogger">
+    <meta name="description" content="Welcome to leeks.js.org">
+    <meta name="keywords" content="leeks.js, leekslazylogger, leeks, ohlookitsderpy, eartharoid">
+    <meta name="author" content="eartharoid, contact@eartharoid.me">
+    <meta name="copyright" content="2020 ohlookitsderpy and eartharoid">
+    <meta name="language" content="EN_GB">
+    <meta name="robots" content="index,follow" />
+    <meta name="coverage" content="Worldwide">
+    <meta name="distribution" content="Global">
+    <meta name="rating" content="General">
+    <meta name="revisit-after" content="7 days">
+    <meta name="owner" content="ohlookitsderpy">
+    <meta name="url" content="https://leeks.js.org">
+    <meta name="og:title" content="leeks.js & leekslazylogger" />
+    <meta name="og:url" content="https://leeks.js.org" />
+    <meta name="og:image" content="./img/leeks.png" />
+    <meta name="og:site_name" content="leeks.js & leekslazylogger" />
+    <meta name="og:description" content="Welcome to leeks.js.org" />
+
+    <!--  LINKS  -->
+    <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+    <link rel="stylesheet" type="text/css" href="./extra.css">
+
+    <!-- SCRIPTS -->
+    <script src="https://kit.fontawesome.com/d40f9ad946.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="left">
+        <div class="content">
+            <img class="logo" id="left-logo" src="./img/leeks-logo.png" />
+
+            <div class="text">
+                <p class="title">
+                    <h1>leeks.js <span id="title-by">by <a
+                                href="https://derpyenterprises.org/">ohlookitsderpy</a></span></h1>
+                </p>
+
+                <ul class="icons">
+                    <li><a href="./"><i class="fas fa-home"></i></a></li>
+                    <li><a href="https://github.com/ohlookitsderpy/leeks.js#README"><i class="fas fa-file-alt"></i></a>
+                    </li>
+                    <li><a href="https://github.com/ohlookitsderpy/leeks.js"><i class="fab fa-github"></i></a></li>
+                    <li><a href="https://www.npmjs.com/package/leeks.js"><i class="fab fa-npm"></i></a></li>
+                    <li><a href="https://yarn.pm/leeks.js"><i class="fab fa-yarn"></i></a></li>
+                    <li><a href="https://discord.gg/HJmmmTB"><i class="fab fa-discord"></i></a></li>
+                </ul>
+
+                <p>
+                    leeks.js is a Node.JS package that provides simple ANSI styling for your terminal.
+                    Featuring a chalk-like API and support for custom colours (8-Bit and RGB/HEX), it has no
+                    dependencies and is under 10kb!
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="right">
+        <div class="content">
+            <img class="logo" id="right-logo" src="./img/logger-logo.png" />
+
+            <div class="text">
+                <p class="title">
+                    <h1>leekslazylogger <span id="title-by">by <a href="https://eartharoid.me">eartharoid</a></span>
+                    </h1>
+                </p>
+
+                <ul class="icons">
+                    <li><a href="./logger"><i class="fas fa-home"></i></a></li>
+                    <li><a href="https://lazylogger.eartharoid.me"><i class="fas fa-file-alt"></i></a></li>
+                    <li><a href="https://github.com/eartharoid/leekslazylogger"><i class="fab fa-github"></i></a></li>
+                    <li><a href="https://www.npmjs.com/package/leekslazylogger"><i class="fab fa-npm"></i></a></li>
+                    <li><a href="https://yarn.pm/leekslazylogger"><i class="fab fa-yarn"></i></a></li>
+                    <li><a href="https://discord.gg/pXc9vyC"><i class="fab fa-discord"></i></a></li>
+                </ul>
+
+                <p>
+                    leekslazylogger is an easy-to-use logging module for Node.JS with support for
+                    colours and styles, custom log types, logging to files, timestamps, and more. It is customisable,
+                    lightweight, and made with leeks.js.
+                </p>
+
+            </div>
+
+        </div>
+
+        <button onclick="expandFooter()" id="footer-btn" title="Expand">Legal</button>
+
+    </div>
+    <div id="footer">
+        <p>&copy; 2020 ohlookitsderpy and eartharoid</p>
+        <p>The leeks.js logo contains elements by <a href="https://www.flaticon.com/authors/pixelmeetup"
+                title="Pixelmeetup">Pixelmeetup</a> from <a href="https://www.flaticon.com/"
+                title="Flaticon">www.flaticon.com</a>, and the leekslazylogger logo contains elements by <a
+                href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a
+                href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></p>
+    </div>
+
+    <script>
+        const expandFooter = () => {
+            let footer = document.getElementById("footer");
+            
+            if(footer.style.visibility == 'hidden') {
+                footer.style.visibility = 'visible';
+            } else {
+                footer.style.visibility = 'hidden';
+            };
+        };
+    </script>
+</body>
+
+</html>
