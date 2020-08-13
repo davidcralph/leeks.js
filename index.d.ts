@@ -5,20 +5,20 @@ declare module 'leeks.js' {
         'bgBlack' | 'bgRed' | 'bgGreen' | 'bgYellow' | 'bgBlue' | 'bgMagenta' | 'bgCyan' | 'bgWhite' |
         'bgBlackBright' | 'bgRedBright' | 'bgGreenBright' | 'bgBlueBright' | 'bgMagentaBright' | 'bgCyanBright' | 'bgWhiteBright' | 'bgYellowBright' |
         'bgGray' | 'bgGrey';
-    
-    /**Alias for `colours`*/
+
+    /** Alias for `colours` */
     export const colors: { [x in Colors]: (t: string) => string; };
 
-    /** Change the colour of the given text. (List: https://github.com/ohlookitsderpy/leeks.js/README.md)*/
+    /** Change the colour of the given text. (List: https://derpyenterprises.org/docs/#/leeks) */
     export const colours: { [x in Colors]: (t: string) => string };
 
-    /** Change the style of the given text. (List: https://github.com/ohlookitsderpy/leeks.js/README.md)*/
+    /** Change the style of the given text. (List: https://derpyenterprises.org/docs/#/leeks) */
     export const styles: { [x in Styles]: (t: string) => string };
 
-    /** Alias for `supportsColour`*/
+    /** Alias for `supportsColour` */
     export const supportsColor: boolean;
 
-    /** Check if colours are supported. (From https://github.com/jorgebucaran/colorette)*/
+    /** Check if colours are supported. (From https://github.com/jorgebucaran/colorette) */
     export const supportsColour: boolean;
 
     /**
@@ -53,7 +53,7 @@ declare module 'leeks.js' {
      * Change the colour of the given text using hexadecimals.
      * @param {string} hex The hex to use
      * @param {string} t The text to show with the hexadecimal colour
-     * @credit [Stackoverflow](https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb)
+     * @credit [Stack Overflow](https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb)
      */
     export const hex: (hex: string, t: string) => string;
 
@@ -61,7 +61,7 @@ declare module 'leeks.js' {
      * Change the background colour of the given text using hexadecimals.
      * @param {string} hex The hex to use
      * @param {string} t The text to show with the hexadecimal colour
-     * @credit [Stackoverflow](https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb)
+     * @credit [Stack Overflow](https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb)
      */
     export const hexBg: (hex: string, t: string) => string;
 }
