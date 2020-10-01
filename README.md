@@ -1,4 +1,4 @@
-# leeks.js <img src='https://leeks.js.org/img/leeks-logo.png' height='64' width='64'>
+# leeks.js <img src='https://leeks.js.org/assets/img/leeks-logo.png' height='64' width='64'>
 Simple ANSI styling for your terminal.
 
 ## Features
