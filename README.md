@@ -7,7 +7,7 @@ Simple ANSI styling for your terminal.
 * Supports 4-bit, 8-bit and full RGB (+ hex codes!)
 
 ## Usage
-See the [documentation](https://derpyenterprises.org/docs/#/leeks)
+See the [documentation](https://docs.derpyenterprises.org/#/leeks)
 
 ## Credits
 [ansicolors](https://github.com/thlorenz/ansicolors), [ansistyles](https://github.com/thlorenz/ansistyles) and [Stack Overflow](https://stackoverflow.com/a/33206814) - Reference
