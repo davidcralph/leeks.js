@@ -9,10 +9,10 @@ declare module 'leeks.js' {
     /** Alias for `colours` */
     export const colors: { [x in Colors]: (t: string) => string; };
 
-    /** Change the colour of the given text. (List: https://derpyenterprises.org/docs/#/leeks) */
+    /** Change the colour of the given text. (List: https://docs.derpyenterprises.org/#/leeks) */
     export const colours: { [x in Colors]: (t: string) => string };
 
-    /** Change the style of the given text. (List: https://derpyenterprises.org/docs/#/leeks) */
+    /** Change the style of the given text. (List: https://docs.derpyenterprises.org/#/leeks) */
     export const styles: { [x in Styles]: (t: string) => string };
 
     /** Alias for `supportsColour` */

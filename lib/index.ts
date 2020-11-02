@@ -3,15 +3,16 @@
  * @copyright David Ralph (ohlookitsderpy) 2019-2020
  * @license MIT
  */
-const d = require('./data.js');
+import Colors from './data/Colors';
+import Styles from './data/Styles';
 
-/** Change the colour of the given text. (List: https://derpyenterprises.org/docs/#/leeks) */
+/** Change the colour of the given text. (List: https://docs.derpyenterprises.org/#/leeks) */
 let colors = [];
-for (let c in d.colors) colors[c] = (t) => `\x1b[${d.colors[c]}m${t}\x1b[0m`;
+for (let c in Colors) colors[c] = (t: any) => `\x1b[${Colors[c]}m${t}\x1b[0m`;
 
-/** Change the style of the given text. (List: https://derpyenterprises.org/docs/#/leeks) */
+/** Change the style of the given text. (List: https://docs.derpyenterprises.org/#/leeks) */
 let styles = [];
-for (let s in d.styles) styles[s] = (t) => `\x1b[${d.styles[s]}m${t}\x1b[0m`;
+for (let s in Styles) styles[s] = (t: any) => `\x1b[${Styles[s]}m${t}\x1b[0m`;
 
 /**
  * Check if colours are supported.
@@ -24,21 +25,25 @@ let supports = !('NO_COLOR' in process.env) && process.env.FORCE_COLOR !== '0' &
  * @param {string} i The 8-bit color to use
  * @param {string} t The text to show with the 8-bit colour
  */
-module.exports.eightBit = (i, t) => '\033' + `[38;5;${i}m${t}\x1b[0m`;
+export function eightBit (i: string, t:string) {
+	return '\033' + `[38;5;${i}m${t}\x1b[0m`;
+}
 
 /**
  * Change the background colour of the given text using 8-bit colours.
  * @param {string} i The 8-bit colour to use
  * @param {string} t The text to show with the 8-bit colour
  */
-module.exports.eightBitBg = (i, t) => '\033' + `[48;5;${i}m${t}\x1b[0m`;
+export function eightBitBg (i: string, t: string) {
+	return '\033' + `[48;5;${i}m${t}\x1b[0m`;
+}
 
 /**
  * Change the colour of the given text using RGB.
  * @param {[number, number, number]} rgb An array of the RGB to use
  * @param {string} t The text to show with the RGB colour
  */
-module.exports.rgb = (rgb, t) => {
+export function rgb (rgb: Array<number>, t: string) {
 	const [r, g, b] = rgb;
 	return '\033' + `[38;2;${r};${g};${b}m${t}\x1b[0m`;
 };
@@ -48,7 +53,7 @@ module.exports.rgb = (rgb, t) => {
  * @param {[number, number, number]} rgb An array of the RGB to use
  * @param {string} t The text to show with the RGB colour
  */
-module.exports.rgbBg = (rgb, t) => {
+export function rgbBg (rgb: Array<number>, t: string) {
 	const [r, g, b] = rgb;
 	return '\033' + `[48;2;${r};${g};${b}m${t}\x1b[0m`;
 };
@@ -59,7 +64,7 @@ module.exports.rgbBg = (rgb, t) => {
  * @param {string} t The text to show with the hexadecimal colour
  * @credit [Stack Overflow](https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb)
  */
-module.exports.hex = (hex, t) => {
+export function hex (hex: string, t: string) {
 	const bigint = parseInt(hex.replace('#', ''), 16);
 	return module.exports.rgb([(bigint >> 16) & 255, (bigint >> 8) & 255, bigint & 255], t);
 };
@@ -70,7 +75,7 @@ module.exports.hex = (hex, t) => {
  * @param {string} t The text to show with the hexadecimal colour
  * @credit [Stack Overflow](https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb)
  */
-module.exports.hexBg = (hex, t) => {
+export function hexBg (hex: string, t: string) {
 	const bigint = parseInt(hex.replace('#', ''), 16);
 	return module.exports.rgbBg([(bigint >> 16) & 255, (bigint >> 8) & 255, bigint & 255], t);
 };

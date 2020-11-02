@@ -1,4 +1,4 @@
-const leeks = require('./lib/index.js'); // Replace with "leeks.js" if not using from the Git repository
+const leeks = require('./build/index.js'); // Replace with "leeks.js" if not using from the Git repository
 
 const error = leeks.colors.red;
 console.log(error('Error - There were no leeks!'));

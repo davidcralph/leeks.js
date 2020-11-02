@@ -1,10 +1,10 @@
 {
     "name": "leeks.js",
-    "version": "0.0.9",
+    "version": "0.1.0",
     "description": "Simple ANSI styling for your terminal.",
     "author": "David \"ohlookitsderpy\" Ralph",
     "license": "MIT",
-    "main": "lib/index.js",
+    "main": "build/index.js",
     "types": "index.d.ts",
     "bugs": {
         "url": "https://github.com/ohlookitsderpy/leeks.js/issues"
