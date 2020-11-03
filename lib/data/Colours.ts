@@ -1,4 +1,4 @@
-enum colors {
+enum colours {
     black = 30,
     red = 31,
     green = 32,
@@ -37,4 +37,4 @@ enum colors {
     bgGrey = 100,
 }
 
-export default colors;
+export default colours;

@@ -3,12 +3,12 @@
  * @copyright David Ralph (ohlookitsderpy) 2019-2020
  * @license MIT
  */
-import Colors from './data/Colors';
+import Colours from './data/Colours';
 import Styles from './data/Styles';
 
 /** Change the colour of the given text. (List: https://docs.derpyenterprises.org/#/leeks) */
-let colors = [];
-for (let c in Colors) colors[c] = (t: any) => `\x1b[${Colors[c]}m${t}\x1b[0m`;
+let colours = [];
+for (let c in Colours) colours[c] = (t: any) => `\x1b[${Colours[c]}m${t}\x1b[0m`;
 
 /** Change the style of the given text. (List: https://docs.derpyenterprises.org/#/leeks) */
 let styles = [];
@@ -80,8 +80,8 @@ export function hexBg (hex: string, t: string) {
 	return module.exports.rgbBg([(bigint >> 16) & 255, (bigint >> 8) & 255, bigint & 255], t);
 };
 
-module.exports.colors = colors;
-module.exports.colours = colors;
+module.exports.colors = colours;
+module.exports.colours = colours;
 module.exports.supportsColor = supports;
 module.exports.supportsColour = supports;
 module.exports.styles = styles;
