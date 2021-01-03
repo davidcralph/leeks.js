@@ -1,2 +1,8 @@
-.vscode/
+# Folders
 build/
+.vscode/
+node_modules/
+
+# Files
+yarn.lock
+package-lock.json

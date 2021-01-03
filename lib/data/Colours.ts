@@ -34,7 +34,7 @@ enum colours {
     bgCyanBright = 106,
     bgWhiteBright = 107,
     bgGray = 100,
-    bgGrey = 100,
+    bgGrey = 100
 }
 
 export default colours;

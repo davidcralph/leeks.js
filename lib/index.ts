@@ -1,6 +1,6 @@
 /**
  * @module leeks.js
- * @copyright David Ralph (ohlookitsderpy) 2019-2020
+ * @copyright David Ralph (ohlookitsderpy) 2019-2021
  * @license MIT
  */
 import Colours from './data/Colours';
@@ -8,24 +8,24 @@ import Styles from './data/Styles';
 
 /** Change the colour of the given text. (List: https://docs.derpyenterprises.org/#/leeks) */
 let colours = [];
-for (let c in Colours) colours[c] = (t: any) => `\x1b[${Colours[c]}m${t}\x1b[0m`;
+for (let c in Colours) colours[c] = (t: string) => `\x1b[${Colours[c]}m${t}\x1b[0m`;
 
 /** Change the style of the given text. (List: https://docs.derpyenterprises.org/#/leeks) */
 let styles = [];
-for (let s in Styles) styles[s] = (t: any) => `\x1b[${Styles[s]}m${t}\x1b[0m`;
+for (let s in Styles) styles[s] = (t: string) => `\x1b[${Styles[s]}m${t}\x1b[0m`;
 
 /**
  * Check if colours are supported.
  * @credit [Colorette](https://github.com/jorgebucaran/colorette)
  */
-let supports = !('NO_COLOR' in process.env) && process.env.FORCE_COLOR !== '0' && (process.env.FORCE_COLOR || process.platform === 'win32' || (process.stdout.isTTY && process.env.TERM && process.env.TERM !== 'dumb'));
+let supports:string | boolean = !('NO_COLOR' in process.env) && process.env.FORCE_COLOR !== '0' && (process.env.FORCE_COLOR || process.platform === 'win32' || (process.stdout.isTTY && process.env.TERM && process.env.TERM !== 'dumb'));
 
 /**
  * Change the colour of the given text using 8-bit colours.
  * @param {string} i The 8-bit color to use
  * @param {string} t The text to show with the 8-bit colour
  */
-export function eightBit (i: string, t:string) {
+export function eightBit (i: string, t: string) {
 	return '\033' + `[38;5;${i}m${t}\x1b[0m`;
 }
 
@@ -43,7 +43,7 @@ export function eightBitBg (i: string, t: string) {
  * @param {[number, number, number]} rgb An array of the RGB to use
  * @param {string} t The text to show with the RGB colour
  */
-export function rgb (rgb: Array<number>, t: string) {
+export function rgb (rgb: [number, number, number], t: string) {
 	const [r, g, b] = rgb;
 	return '\033' + `[38;2;${r};${g};${b}m${t}\x1b[0m`;
 };
@@ -53,7 +53,7 @@ export function rgb (rgb: Array<number>, t: string) {
  * @param {[number, number, number]} rgb An array of the RGB to use
  * @param {string} t The text to show with the RGB colour
  */
-export function rgbBg (rgb: Array<number>, t: string) {
+export function rgbBg (rgb: [number, number, number], t: string) {
 	const [r, g, b] = rgb;
 	return '\033' + `[48;2;${r};${g};${b}m${t}\x1b[0m`;
 };
@@ -66,7 +66,7 @@ export function rgbBg (rgb: Array<number>, t: string) {
  */
 export function hex (hex: string, t: string) {
 	const bigint = parseInt(hex.replace('#', ''), 16);
-	return module.exports.rgb([(bigint >> 16) & 255, (bigint >> 8) & 255, bigint & 255], t);
+	return rgb([(bigint >> 16) & 255, (bigint >> 8) & 255, bigint & 255], t);
 };
 
 /**
@@ -77,7 +77,7 @@ export function hex (hex: string, t: string) {
  */
 export function hexBg (hex: string, t: string) {
 	const bigint = parseInt(hex.replace('#', ''), 16);
-	return module.exports.rgbBg([(bigint >> 16) & 255, (bigint >> 8) & 255, bigint & 255], t);
+	return rgbBg([(bigint >> 16) & 255, (bigint >> 8) & 255, bigint & 255], t);
 };
 
 module.exports.colors = colours;
