@@ -16,4 +16,4 @@ See the [documentation](https://docs.derpyenterprises.org/#/leeks)
 
 [Stack Overflow](https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb) - Hex support
 
-and all the contributors <3
+and all the contributors!

@@ -1,4 +1,5 @@
 enum colours {
+    // Default
     black = 30,
     red = 31,
     green = 32,
@@ -17,6 +18,7 @@ enum colours {
     magentaBright = 95,
     cyanBright = 96,
     whiteBright = 97,
+    // Background
     bgBlack = 40,
     bgRed = 41,
     bgGreen = 42,

@@ -18,7 +18,7 @@ for (let s in Styles) styles[s] = (t: string) => `\x1b[${Styles[s]}m${t}\x1b[0m`
  * Check if colours are supported.
  * @credit [Colorette](https://github.com/jorgebucaran/colorette)
  */
-let supports:string | boolean = !('NO_COLOR' in process.env) && process.env.FORCE_COLOR !== '0' && (process.env.FORCE_COLOR || process.platform === 'win32' || (process.stdout.isTTY && process.env.TERM && process.env.TERM !== 'dumb'));
+let supports: string | boolean = !('NO_COLOR' in process.env) && process.env.FORCE_COLOR !== '0' && (process.env.FORCE_COLOR || process.platform === 'win32' || (process.stdout.isTTY && process.env.TERM && process.env.TERM !== 'dumb'));
 
 /**
  * Change the colour of the given text using 8-bit colours.
