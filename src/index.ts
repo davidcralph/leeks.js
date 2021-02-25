@@ -6,11 +6,11 @@
 import Colours from './data/Colours';
 import Styles from './data/Styles';
 
-/** Change the colour of the given text. (List: https://docs.derpyenterprises.org/#/leeks) */
+/** Change the colour of the given text. (List: https://docs.davidjcralph.co.uk/#/leeks) */
 let colours = [];
 for (let c in Colours) colours[c] = (t: string) => `\x1b[${Colours[c]}m${t}\x1b[0m`;
 
-/** Change the style of the given text. (List: https://docs.derpyenterprises.org/#/leeks) */
+/** Change the style of the given text. (List: https://docs.davidjcralph.co.uk/#/leeks) */
 let styles = [];
 for (let s in Styles) styles[s] = (t: string) => `\x1b[${Styles[s]}m${t}\x1b[0m`;
 

@@ -1,5 +1,5 @@
 declare module 'leeks.js' {
-    type Styles = 'reset' | 'bold' | 'dim' | 'italic' | 'underline' | 'blink' | 'inverse' | 'strikethrough';
+    type Styles = 'reset' | 'bold' | 'dim' | 'italic' | 'underline' | 'overline' | 'blink' | 'inverse' | 'strikethrough' | 'nostrikethrough' | 'nounderline' | 'nooverline' | 'noblink' | 'noinverse';
     type Colors = 'black' | 'red' | 'green' | 'yellow' | 'blue' | 'magenta' | 'cyan' | 'white' | 'gray' | 'grey' |
         'blackBright' | 'redBright' | 'yellowBright' | 'blueBright' | 'magentaBright' | 'cyanBright' | 'whiteBright' | 'greenBright' |
         'bgBlack' | 'bgRed' | 'bgGreen' | 'bgYellow' | 'bgBlue' | 'bgMagenta' | 'bgCyan' | 'bgWhite' |
@@ -9,10 +9,10 @@ declare module 'leeks.js' {
     /** Alias for `colours` */
     export const colors: { [x in Colors]: (t: string) => string; };
 
-    /** Change the colour of the given text. (List: https://docs.derpyenterprises.org/#/leeks) */
+    /** Change the colour of the given text. (List: https://docs.davidjcralph.co.uk/#/leeks) */
     export const colours: { [x in Colors]: (t: string) => string };
 
-    /** Change the style of the given text. (List: https://docs.derpyenterprises.org/#/leeks) */
+    /** Change the style of the given text. (List: https://docs.davidjcralph.co.uk/#/leeks) */
     export const styles: { [x in Styles]: (t: string) => string };
 
     /** Alias for `supportsColour` */
