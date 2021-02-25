@@ -7,7 +7,7 @@ Simple ANSI styling for your terminal.
 * Supports 4-bit, 8-bit and full RGB (+ hex codes!)
 
 ## Usage
-See the [documentation](https://docs.davidjcralph.co.uk/#/leeks)
+See the [documentation](https://docs.davidjcralph.co.uk/#/leeks) and [example](https://github.com/davidjcralph/leeks.js/blob/main/example/test.js)
 
 ## Credits
 [ansicolors](https://github.com/thlorenz/ansicolors), [ansistyles](https://github.com/thlorenz/ansistyles) and [Stack Overflow](https://stackoverflow.com/a/33206814) - Reference
