@@ -18,6 +18,7 @@ export default {
     magentaBright: 95,
     cyanBright: 96,
     whiteBright: 97,
+
     // Background
     bgBlack: 40,
     bgRed: 41,

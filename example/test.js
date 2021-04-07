@@ -18,3 +18,5 @@ console.log(leeks.rgbBg([114, 137, 218], 'hello'));
 
 console.log(leeks.hex('#7289da', 'hello'));
 console.log(leeks.hexBg('#7289da', 'hello'));
+
+console.log(leeks.keywords.aqua('Hello'))

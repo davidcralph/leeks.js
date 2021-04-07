@@ -2,9 +2,9 @@
 Simple ANSI styling for your terminal.
 
 ## Features
-* Ultra lightweight (0 dependencies and under 10kb!)
+* Ultra lightweight (0 dependencies and small file size)
 * [Chalk](https://github.com/chalk/chalk)-like API
-* Supports 4-bit, 8-bit and full RGB (+ hex codes!)
+* Supports 4-bit, 8-bit, full RGB, hex and CSS keywords
 
 ## Usage
 See the [documentation](https://docs.davidjcralph.co.uk/#/leeks) and [example](https://github.com/davidjcralph/leeks.js/blob/main/example/test.js)

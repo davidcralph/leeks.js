@@ -1,5 +1,6 @@
 export default {
     reset: 0,
+
     // Styles
     bold: 1,
     dim: 2,
@@ -11,6 +12,7 @@ export default {
     strikethrough: 9,
     hidden: 8,
     shown: 28,
+
     // Remove styles
     nostrikethrough: 29,
     nounderline: 24,
