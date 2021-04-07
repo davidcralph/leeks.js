@@ -22,6 +22,7 @@ console.log(leeks.hex('#7289da', 'hello'));
 console.log(leeks.hexBg('#7289da', 'hello'));
 
 console.log(leeks.keywords.aqua('Hello'));
+console.log(leeks.bgKeywords.aqua('Hello'));
 
 leeks.disableColours();
 console.log(error('test'));

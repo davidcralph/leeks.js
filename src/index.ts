@@ -37,12 +37,19 @@ for (const s in Styles) styles[s] = (t: string) => `\x1b[${Styles[s]}m${t}\x1b[0
 let keywords = [];
 for (const k in Keywords) keywords[k] = (t: string) => enabled ? rgb(Keywords[k], t) : t;
 
+/** 
+ * Change the background colour of the given text using CSS keywords (List: https://docs.davidjcralph.co.uk/#/leeks) 
+ * @param {string} t The text to change the colour of
+ */
+let bgKeywords = [];
+for (const k in Keywords) bgKeywords[k] = (t: string) => enabled ? rgbBg(Keywords[k], t) : t;
+
 /**
  * Change the colour of the given text using 8-bit colours
  * @param {string} i The 8-bit colour to use
  * @param {string} t The text to show with the 8-bit colour
  */
-export function eightBit (i: string, t: string) {
+export function eightBit(i: string, t: string) {
 	if (!enabled) return t;
 	return '\033' + `[38;5;${i}m${t}\x1b[0m`;
 }
@@ -52,7 +59,7 @@ export function eightBit (i: string, t: string) {
  * @param {string} i The 8-bit colour to use
  * @param {string} t The text to show with the 8-bit colour
  */
-export function eightBitBg (i: string, t: string) {
+export function eightBitBg(i: string, t: string) {
 	if (!enabled) return t;
 	return '\033' + `[48;5;${i}m${t}\x1b[0m`;
 }
@@ -62,7 +69,7 @@ export function eightBitBg (i: string, t: string) {
  * @param {[number, number, number]} rgb An array of the RGB to use
  * @param {string} t The text to show with the RGB colour
  */
-export function rgb (rgb: [number, number, number], t: string) {
+export function rgb(rgb: [number, number, number], t: string) {
 	if (!enabled) return t;
 
 	const [r, g, b] = rgb;
@@ -74,7 +81,7 @@ export function rgb (rgb: [number, number, number], t: string) {
  * @param {[number, number, number]} rgb An array of the RGB to use
  * @param {string} t The text to show with the RGB colour
  */
-export function rgbBg (rgb: [number, number, number], t: string) {
+export function rgbBg(rgb: [number, number, number], t: string) {
 	if (!enabled) return t;
 
 	const [r, g, b] = rgb;
@@ -87,7 +94,7 @@ export function rgbBg (rgb: [number, number, number], t: string) {
  * @param {string} t The text to show with the hexadecimal colour
  * @credit [Stack Overflow](https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb)
  */
-export function hex (hex: string, t: string) {
+export function hex(hex: string, t: string) {
 	const bigint = parseInt(hex.replace('#', ''), 16);
 	return rgb([(bigint >> 16) & 255, (bigint >> 8) & 255, bigint & 255], t);
 };
@@ -98,7 +105,7 @@ export function hex (hex: string, t: string) {
  * @param {string} t The text to show with the hexadecimal colour
  * @credit [Stack Overflow](https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb)
  */
-export function hexBg (hex: string, t: string) {
+export function hexBg(hex: string, t: string) {
 	const bigint = parseInt(hex.replace('#', ''), 16);
 	return rgbBg([(bigint >> 16) & 255, (bigint >> 8) & 255, bigint & 255], t);
 };
@@ -106,24 +113,25 @@ export function hexBg (hex: string, t: string) {
 /**
  * Enable colour support for leeks.js
  */
-export function enableColours () {
+export function enableColours() {
 	enabled = true;
 }
 
 /**
  * Disable colour support for leeks.js
  */
-export function disableColours () {
+export function disableColours() {
 	enabled = false;
 }
 
 export {
-	colours as colors, 
+	colours as colors,
 	supports as supportsColor,
 	supports as supportsColour,
 	enableColours as enableColors,
 	disableColours as disableColors,
 	colours,
 	keywords,
+	bgKeywords,
 	styles
 };

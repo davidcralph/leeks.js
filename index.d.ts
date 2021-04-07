@@ -38,6 +38,12 @@ declare module 'leeks.js' {
      */
     export const keywords: { [x in Keywords]: (t: string) => string };
 
+    /** 
+     * Change the background colour of the given text (List: https://docs.davidjcralph.co.uk/#/leeks) 
+     * @param {string} t The text to change the colour of
+     */
+    export const bgKeywords: { [x in Keywords]: (t: string) => string };
+
     /** Alias for `supportsColour` */
     export const supportsColor: boolean;
 
