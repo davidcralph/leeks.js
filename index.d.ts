@@ -5,62 +5,60 @@ declare module 'leeks.js' {
         'bgBlack' | 'bgRed' | 'bgGreen' | 'bgYellow' | 'bgBlue' | 'bgMagenta' | 'bgCyan' | 'bgWhite' |
         'bgBlackBright' | 'bgRedBright' | 'bgGreenBright' | 'bgBlueBright' | 'bgMagentaBright' | 'bgCyanBright' | 'bgWhiteBright' | 'bgYellowBright' |
         'bgGray' | 'bgGrey';
-    type Keywords =  'black' | 'silver' | 'gray' | 'white' | 'maroon' | 'red' | 'purple' | 'fuchsia' | 'green' | 'lime' | 'olive' | 
-        'yellow' | 'navy' | 'blue' | 'teal' | 'aqua' | 'aliceblue' | 'antiquewhite' | 'aquamarine' | 'azure' | 'beige' | 'bisque' | 'blanchedalmond' | 'blueviolet' | 'brown' | 'burlywood' | 'cadetblue' | 
-        'chartreuse' | 'chocolate' | 'coral' | 'cornflowerblue' | 'cornsilk' | 'crimson' | 'cyan' | 'darkblue' | 'darkcyan' | 'darkgoldenrod' | 'darkgray' | 'darkgreen' | 'darkgrey' | 'darkkhaki' | 
-        'darkmagenta' | 'darkolivegreen' | 'darkorange' | 'darkorchid' | 'darkred' | 'darksalmon' | 'darkseagreen' | 'darkslateblue' | 'darkslategray' | 'darkslategrey' | 'darkturquoise' | 'darkviolet' | 
-        'deeppink' | 'deepskyblue' | 'dimgray' | 'dimgrey' | 'dodgerblue' | 'firebrick' | 'floralwhite' | 'forestgreen' | 'gainsboro' | 'ghostwhite' | 'gold' | 'goldenrod' | 'greenyellow' | 'grey' | 'honeydew' | 
-        'hotpink' | 'indianred' | 'indigo' | 'ivory' | 'khaki' | 'lavender' | 'lavenderblush' | 'lawngreen' | 'lemonchiffon' | 'lightblue' | 'lightcoral' | 'lightcyan' | 'lightgoldenrodyellow' | 'lightgray' | 'lightgreen' | 
+    type Keywords = 'black' | 'silver' | 'gray' | 'white' | 'maroon' | 'red' | 'purple' | 'fuchsia' | 'green' | 'lime' | 'olive' |
+        'yellow' | 'navy' | 'blue' | 'teal' | 'aqua' | 'aliceblue' | 'antiquewhite' | 'aquamarine' | 'azure' | 'beige' | 'bisque' | 'blanchedalmond' | 'blueviolet' | 'brown' | 'burlywood' | 'cadetblue' |
+        'chartreuse' | 'chocolate' | 'coral' | 'cornflowerblue' | 'cornsilk' | 'crimson' | 'cyan' | 'darkblue' | 'darkcyan' | 'darkgoldenrod' | 'darkgray' | 'darkgreen' | 'darkgrey' | 'darkkhaki' |
+        'darkmagenta' | 'darkolivegreen' | 'darkorange' | 'darkorchid' | 'darkred' | 'darksalmon' | 'darkseagreen' | 'darkslateblue' | 'darkslategray' | 'darkslategrey' | 'darkturquoise' | 'darkviolet' |
+        'deeppink' | 'deepskyblue' | 'dimgray' | 'dimgrey' | 'dodgerblue' | 'firebrick' | 'floralwhite' | 'forestgreen' | 'gainsboro' | 'ghostwhite' | 'gold' | 'goldenrod' | 'greenyellow' | 'grey' | 'honeydew' |
+        'hotpink' | 'indianred' | 'indigo' | 'ivory' | 'khaki' | 'lavender' | 'lavenderblush' | 'lawngreen' | 'lemonchiffon' | 'lightblue' | 'lightcoral' | 'lightcyan' | 'lightgoldenrodyellow' | 'lightgray' | 'lightgreen' |
         'lightgrey' | 'lightpink' | 'lightsalmon' | 'lightseagreen' | 'lightskyblue' | 'lightslategray' | 'lightslategrey' | 'lightsteelblue' | 'lightyellow' | 'limegreen' | 'linen' | 'magenta' | 'mediumaquamarine' | 'mediumblue' |
-        'mediumorchid' | 'mediumpurple' | 'mediumseagreen' | 'mediumslateblue' | 'mediumspringgreen' | 'mediumturquoise' | 'mediumvioletred' | 'midnightblue' | 'mintcream' | 'mistyrose' | 'moccasin' | 'navajowhite' | 'oldlace' | 
-        'olivedrab' | 'orange' | 'orangered' | 'orchid' | 'palegoldenrod' | 'palegreen' | 'paleturquoise' | 'palevioletred' | 'papayawhip' | 'peachpuff' | 'peru' | 'pink' | 'plum' | 'powderblue' | 'rosybrown' | 'royalblue' | 
-        'saddlebrown' | 'salmon' | 'sandybrown' | 'seagreen' | 'seashell' | 'sienna' | 'skyblue' | 'slateblue' | 'slategray' | 'slategrey' | 'snow' | 'springgreen' | 'steelblue' | 'tan' | 'thistle' | 'tomato' | 'turquoise' | 
+        'mediumorchid' | 'mediumpurple' | 'mediumseagreen' | 'mediumslateblue' | 'mediumspringgreen' | 'mediumturquoise' | 'mediumvioletred' | 'midnightblue' | 'mintcream' | 'mistyrose' | 'moccasin' | 'navajowhite' | 'oldlace' |
+        'olivedrab' | 'orange' | 'orangered' | 'orchid' | 'palegoldenrod' | 'palegreen' | 'paleturquoise' | 'palevioletred' | 'papayawhip' | 'peachpuff' | 'peru' | 'pink' | 'plum' | 'powderblue' | 'rosybrown' | 'royalblue' |
+        'saddlebrown' | 'salmon' | 'sandybrown' | 'seagreen' | 'seashell' | 'sienna' | 'skyblue' | 'slateblue' | 'slategray' | 'slategrey' | 'snow' | 'springgreen' | 'steelblue' | 'tan' | 'thistle' | 'tomato' | 'turquoise' |
         'violet' | 'wheat' | 'whitesmoke' | 'yellowgreen';
 
     /** Alias for `colours` */
-    export const colors: { [x in Colors]: (t: string) => string; };
+    export const colors: {
+        [x in Colors]: (t: string) => string;
+    };
 
     /** 
      * Change the colour of the given text (List: https://docs.davidjcralph.co.uk/#/leeks) 
      * @param {string} t The text to change the colour of
      */
-    export const colours: { [x in Colors]: (t: string) => string };
+    export const colours: {
+        [x in Colors]: (t: string) => string
+    };
 
     /** 
      * Change the style of the given text (List: https://docs.davidjcralph.co.uk/#/leeks) 
      * @param {string} t The text to change the style of
      */
-    export const styles: { [x in Styles]: (t: string) => string };
+    export const styles: {
+        [x in Styles]: (t: string) => string
+    };
 
     /** 
      * Change the colour of the given text (List: https://docs.davidjcralph.co.uk/#/leeks) 
      * @param {string} t The text to change the colour of
      */
-    export const keywords: { [x in Keywords]: (t: string) => string };
+    export const keywords: {
+        [x in Keywords]: (t: string) => string
+    };
 
     /** 
      * Change the background colour of the given text (List: https://docs.davidjcralph.co.uk/#/leeks) 
      * @param {string} t The text to change the colour of
      */
-    export const bgKeywords: { [x in Keywords]: (t: string) => string };
+    export const bgKeywords: {
+        [x in Keywords]: (t: string) => string
+    };
 
     /** Alias for `supportsColour` */
     export const supportsColor: boolean;
 
     /** Check if colours are supported (From https://github.com/jorgebucaran/colorette) */
     export const supportsColour: boolean;
-
-    /** Enable colour support for leeks.js */
-    export type enableColours = () => void;
-
-    /** Alias for `enableColours` */
-    export type enableColors = () => void;
-
-    /** Disable colour support for leeks.js */
-    export type disableColours = () => void;
-
-    /** Alias for `disabeColours` */
-    export type disableColors = () => void;
 
     /**
      * Change the background colour of the given text using 8-bit colours
@@ -105,4 +103,24 @@ declare module 'leeks.js' {
      * @credit [Stack Overflow](https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb)
      */
     export const hexBg: (hex: string, t: string) => string;
+
+    /**
+     * Set an alias
+     * @param {string} name The name of the alias 
+     * @param {string} type Either "colour" or "style"
+     * @param {string} value The colour/style you want to use, e.g leeks.colours.green
+     */
+    export type alias = () => void;
+
+    /** Enable colour support for leeks.js */
+    export type enableColours = () => void;
+
+    /** Alias for `enableColours` */
+    export type enableColors = () => void;
+
+    /** Disable colour support for leeks.js */
+    export type disableColours = () => void;
+
+    /** Alias for `disabeColours` */
+    export type disableColors = () => void;
 }

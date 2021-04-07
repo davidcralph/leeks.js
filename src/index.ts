@@ -52,7 +52,7 @@ for (const k in Keywords) bgKeywords[k] = (t: string) => enabled ? rgbBg(Keyword
 export function eightBit(i: string, t: string) {
 	if (!enabled) return t;
 	return '\033' + `[38;5;${i}m${t}\x1b[0m`;
-}
+};
 
 /**
  * Change the background colour of the given text using 8-bit colours
@@ -62,7 +62,7 @@ export function eightBit(i: string, t: string) {
 export function eightBitBg(i: string, t: string) {
 	if (!enabled) return t;
 	return '\033' + `[48;5;${i}m${t}\x1b[0m`;
-}
+};
 
 /**
  * Change the colour of the given text using RGB
@@ -110,19 +110,30 @@ export function hexBg(hex: string, t: string) {
 	return rgbBg([(bigint >> 16) & 255, (bigint >> 8) & 255, bigint & 255], t);
 };
 
+
+/**
+ * Set an alias
+ * @param {string} name The name of the alias 
+ * @param {string} type Either "colour" or "style"
+ * @param {string} value The colour/style you want to use, e.g leeks.colours.green
+ */
+export function alias(name: string, type: string, value: string) {
+	[type][name] = value;
+};
+
 /**
  * Enable colour support for leeks.js
  */
 export function enableColours() {
 	enabled = true;
-}
+};
 
 /**
  * Disable colour support for leeks.js
  */
 export function disableColours() {
 	enabled = false;
-}
+};
 
 export {
 	colours as colors,

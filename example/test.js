@@ -29,3 +29,8 @@ console.log(error('test'));
 
 leeks.enableColours();
 console.log(error('test'));
+
+console.log(leeks.colours.blue`hello there`);
+
+leeks.alias('primary', leeks.colours.green);
+console.log(leeks.colours.primary('hi'));
