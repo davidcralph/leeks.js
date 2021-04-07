@@ -10,7 +10,7 @@ Simple ANSI styling for your terminal.
 See the [documentation](https://docs.davidjcralph.co.uk/#/leeks) and [example](https://github.com/davidjcralph/leeks.js/blob/main/example/test.js)
 
 ## Credits
-[ansicolors](https://github.com/thlorenz/ansicolors), [ansistyles](https://github.com/thlorenz/ansistyles) and [Stack Overflow](https://stackoverflow.com/a/33206814) - Reference
+[ansicolors](https://github.com/thlorenz/ansicolors), [ansistyles](https://github.com/thlorenz/ansistyles), [W3C](https://www.w3.org/TR/2018/REC-css-color-3-20180619/) and [Stack Overflow](https://stackoverflow.com/a/33206814) - Reference
 
 [colorette](https://github.com/jorgebucaran/colorette) - Colour support checking code
 
