@@ -32,5 +32,5 @@ console.log(error('test'));
 
 console.log(leeks.colours.blue`hello there`);
 
-leeks.alias('primary', leeks.colours.green);
+leeks.alias('primary', 'colours', leeks.colours.green);
 console.log(leeks.colours.primary('hi'));

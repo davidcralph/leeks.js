@@ -114,11 +114,16 @@ export function hexBg(hex: string, t: string) {
 /**
  * Set an alias
  * @param {string} name The name of the alias 
- * @param {string} type Either "colour" or "style"
+ * @param {string} type Either "colours", "colors" or "styles"
  * @param {string} value The colour/style you want to use, e.g leeks.colours.green
  */
 export function alias(name: string, type: string, value: string) {
-	[type][name] = value;
+	switch (type) {
+		case 'colors':
+		case 'colours': colours[name] = value; break;
+		case 'styles': styles[name] = value; break;
+		default: throw new Error('Must be "colours", "colors" or "styles"');
+	}
 };
 
 /**
