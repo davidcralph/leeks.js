@@ -107,7 +107,7 @@ declare module 'leeks.js' {
     /**
      * Set an alias
      * @param {string} name The name of the alias 
-     * @param {string} type Either "colour" or "style"
+     * @param {string} type Either "colours", "colors" or "styles"
      * @param {string} value The colour/style you want to use, e.g leeks.colours.green
      */
     export type alias = () => void;
