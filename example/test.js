@@ -7,6 +7,8 @@ console.log(leeks.colors.red('Hello') + leeks.colors.green(' I like leeks!'));
 console.log(leeks.colors.bgRed('Hello') + leeks.colors.bgGreen(' I like leeks!'));
 console.log(leeks.colors.blue(leeks.styles.underline('Hello!')));
 
+console.log(leeks.styles.underline('Hello'));
+
 console.log(leeks.colours.grey('Hello!'));
 console.log(leeks.colors.gray('Hello!'));
 
@@ -20,3 +22,9 @@ console.log(leeks.hex('#7289da', 'hello'));
 console.log(leeks.hexBg('#7289da', 'hello'));
 
 console.log(leeks.keywords.aqua('Hello'));
+
+leeks.disableColours();
+console.log(error('test'));
+
+leeks.enableColours();
+console.log(error('test'));

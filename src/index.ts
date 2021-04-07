@@ -7,12 +7,21 @@ import Colours from './data/Colours';
 import Styles from './data/Styles';
 import Keywords from './data/Keywords';
 
+/**
+ * Check if colours are supported
+ * @credit [Colorette](https://github.com/jorgebucaran/colorette)
+ */
+const supports: string | boolean = !('NO_COLOR' in process.env) && process.env.FORCE_COLOR !== '0' && (process.env.FORCE_COLOR || process.platform === 'win32' || (process.stdout.isTTY && process.env.TERM && process.env.TERM !== 'dumb'));
+
+// Enable/disable support for colours, by default checks for support using the function
+let enabled = supports ? true : false;
+
 /** 
  * Change the colour of the given text (List: https://docs.davidjcralph.co.uk/#/leeks) 
  * @param {string} t The text to change the colour of
  */
 let colours = [];
-for (const c in Colours) colours[c] = (t: string) => `\x1b[${Colours[c]}m${t}\x1b[0m`;
+for (const c in Colours) colours[c] = (t: string) => enabled ? `\x1b[${Colours[c]}m${t}\x1b[0m` : t;
 
 /** 
  * Change the style of the given text (List: https://docs.davidjcralph.co.uk/#/leeks) 
@@ -26,13 +35,7 @@ for (const s in Styles) styles[s] = (t: string) => `\x1b[${Styles[s]}m${t}\x1b[0
  * @param {string} t The text to change the colour of
  */
 let keywords = [];
-for (const k in Keywords) keywords[k] = (t: string) => rgb(Keywords[k], t);
-
-/**
- * Check if colours are supported
- * @credit [Colorette](https://github.com/jorgebucaran/colorette)
- */
-const supports: string | boolean = !('NO_COLOR' in process.env) && process.env.FORCE_COLOR !== '0' && (process.env.FORCE_COLOR || process.platform === 'win32' || (process.stdout.isTTY && process.env.TERM && process.env.TERM !== 'dumb'));
+for (const k in Keywords) keywords[k] = (t: string) => enabled ? rgb(Keywords[k], t) : t;
 
 /**
  * Change the colour of the given text using 8-bit colours
@@ -40,6 +43,7 @@ const supports: string | boolean = !('NO_COLOR' in process.env) && process.env.F
  * @param {string} t The text to show with the 8-bit colour
  */
 export function eightBit (i: string, t: string) {
+	if (!enabled) return t;
 	return '\033' + `[38;5;${i}m${t}\x1b[0m`;
 }
 
@@ -49,6 +53,7 @@ export function eightBit (i: string, t: string) {
  * @param {string} t The text to show with the 8-bit colour
  */
 export function eightBitBg (i: string, t: string) {
+	if (!enabled) return t;
 	return '\033' + `[48;5;${i}m${t}\x1b[0m`;
 }
 
@@ -58,6 +63,8 @@ export function eightBitBg (i: string, t: string) {
  * @param {string} t The text to show with the RGB colour
  */
 export function rgb (rgb: [number, number, number], t: string) {
+	if (!enabled) return t;
+
 	const [r, g, b] = rgb;
 	return '\033' + `[38;2;${r};${g};${b}m${t}\x1b[0m`;
 };
@@ -68,6 +75,8 @@ export function rgb (rgb: [number, number, number], t: string) {
  * @param {string} t The text to show with the RGB colour
  */
 export function rgbBg (rgb: [number, number, number], t: string) {
+	if (!enabled) return t;
+
 	const [r, g, b] = rgb;
 	return '\033' + `[48;2;${r};${g};${b}m${t}\x1b[0m`;
 };
@@ -94,9 +103,27 @@ export function hexBg (hex: string, t: string) {
 	return rgbBg([(bigint >> 16) & 255, (bigint >> 8) & 255, bigint & 255], t);
 };
 
-export { colours as colors };
-export { colours };
-export { keywords };
-export { supports as supportsColor };
-export { supports as supportsColour };
-export { styles };
+/**
+ * Enable colour support for leeks.js
+ */
+export function enableColours () {
+	enabled = true;
+}
+
+/**
+ * Disable colour support for leeks.js
+ */
+export function disableColours () {
+	enabled = false;
+}
+
+export {
+	colours as colors, 
+	supports as supportsColor,
+	supports as supportsColour,
+	enableColours as enableColors,
+	disableColours as disableColors,
+	colours,
+	keywords,
+	styles
+};

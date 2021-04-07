@@ -44,6 +44,18 @@ declare module 'leeks.js' {
     /** Check if colours are supported (From https://github.com/jorgebucaran/colorette) */
     export const supportsColour: boolean;
 
+    /** Enable colour support for leeks.js */
+    export type enableColours = () => void;
+
+    /** Alias for `enableColours` */
+    export type enableColors = () => void;
+
+    /** Disable colour support for leeks.js */
+    export type disableColours = () => void;
+
+    /** Alias for `disabeColours` */
+    export type disableColors = () => void;
+
     /**
      * Change the background colour of the given text using 8-bit colours
      * @param i The 8-bit colour to use
