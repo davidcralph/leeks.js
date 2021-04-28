@@ -29,6 +29,6 @@
         "256"
     ],
     "devDependencies": {
-        "@types/node": "^15.0.0"
+        "@types/node": "^15.0.1"
     }
 }
