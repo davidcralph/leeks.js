@@ -1,5 +1,5 @@
 # leeks.js <img src='https://leeks.js.org/assets/img/leeks-logo.png' height='64' width='64'>
-Simple ANSI styling for your terminal.
+Simple ANSI styling for your terminal
 
 ## Features
 * Ultra lightweight (0 dependencies and small file size)

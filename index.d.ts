@@ -92,7 +92,7 @@ declare module 'leeks.js' {
      * Change the colour of the given text using hexadecimals
      * @param {string} hex The hex to use
      * @param {string} t The text to show with the hexadecimal colour
-     * @credit [Stack Overflow](https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb)
+     * @credit [Stack Overflow](https://stackoverflow.com/q/5623838)
      */
     export const hex: (hex: string, t: string) => string;
 
@@ -100,7 +100,7 @@ declare module 'leeks.js' {
      * Change the background colour of the given text using hexadecimals
      * @param {string} hex The hex to use
      * @param {string} t The text to show with the hexadecimal colour
-     * @credit [Stack Overflow](https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb)
+     * @credit [Stack Overflow](https://stackoverflow.com/q/5623838)
      */
     export const hexBg: (hex: string, t: string) => string;
 

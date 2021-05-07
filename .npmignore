@@ -1,1 +1,8 @@
+# Folders
 .github/
+.vscode/
+example/
+src/
+
+# Files
+tsconfig.json

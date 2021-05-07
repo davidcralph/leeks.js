@@ -21,28 +21,36 @@ let enabled = supports ? true : false;
  * @param {string} t The text to change the colour of
  */
 let colours = [];
-for (const c in Colours) colours[c] = (t: string) => enabled ? `\x1b[${Colours[c]}m${t}\x1b[0m` : t;
+for (const c in Colours) {
+	colours[c] = (t: string) => enabled ? `\x1b[${Colours[c]}m${t}\x1b[0m` : t;
+}
 
 /** 
  * Change the style of the given text (List: https://docs.davidjcralph.co.uk/#/leeks) 
  * @param {string} t The text to change the colour of
  */
 let styles = [];
-for (const s in Styles) styles[s] = (t: string) => `\x1b[${Styles[s]}m${t}\x1b[0m`;
+for (const s in Styles) {
+	styles[s] = (t: string) => `\x1b[${Styles[s]}m${t}\x1b[0m`;
+}
 
 /** 
  * Change the colour of the given text using CSS keywords (List: https://docs.davidjcralph.co.uk/#/leeks) 
  * @param {string} t The text to change the colour of
  */
 let keywords = [];
-for (const k in Keywords) keywords[k] = (t: string) => enabled ? rgb(Keywords[k], t) : t;
+for (const k in Keywords) {
+	keywords[k] = (t: string) => enabled ? rgb(Keywords[k], t) : t;
+}
 
 /** 
  * Change the background colour of the given text using CSS keywords (List: https://docs.davidjcralph.co.uk/#/leeks) 
  * @param {string} t The text to change the colour of
  */
 let bgKeywords = [];
-for (const k in Keywords) bgKeywords[k] = (t: string) => enabled ? rgbBg(Keywords[k], t) : t;
+for (const k in Keywords) {
+	bgKeywords[k] = (t: string) => enabled ? rgbBg(Keywords[k], t) : t;
+}
 
 /**
  * Change the colour of the given text using 8-bit colours
@@ -92,7 +100,7 @@ export function rgbBg(rgb: [number, number, number], t: string) {
  * Change the colour of the given text using hexadecimals
  * @param {string} hex The hex to use
  * @param {string} t The text to show with the hexadecimal colour
- * @credit [Stack Overflow](https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb)
+ * @credit [Stack Overflow](https://stackoverflow.com/q/5623838)
  */
 export function hex(hex: string, t: string) {
 	const bigint = parseInt(hex.replace('#', ''), 16);
@@ -103,13 +111,12 @@ export function hex(hex: string, t: string) {
  * Change the background colour of the given text using hexadecimals
  * @param {string} hex The hex to use
  * @param {string} t The text to show with the hexadecimal colour
- * @credit [Stack Overflow](https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb)
+ * @credit [Stack Overflow](https://stackoverflow.com/q/5623838)
  */
 export function hexBg(hex: string, t: string) {
 	const bigint = parseInt(hex.replace('#', ''), 16);
 	return rgbBg([(bigint >> 16) & 255, (bigint >> 8) & 255, bigint & 255], t);
 };
-
 
 /**
  * Set an alias
@@ -120,9 +127,14 @@ export function hexBg(hex: string, t: string) {
 export function alias(name: string, type: string, value: string) {
 	switch (type) {
 		case 'colors':
-		case 'colours': colours[name] = value; break;
-		case 'styles': styles[name] = value; break;
-		default: throw new Error('Must be "colours", "colors" or "styles"');
+		case 'colours': 
+		    colours[name] = value; 
+		    break;
+		case 'styles': 
+		    styles[name] = value; 
+		    break;
+		default: 
+		    throw new Error('Must be "colours", "colors" or "styles"');
 	}
 };
 
