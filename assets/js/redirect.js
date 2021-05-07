@@ -1,6 +1,6 @@
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-window.addEventListener('DOMContentLoaded', async (event) => {
+window.addEventListener('DOMContentLoaded', async () => {
     const redirect = document.getElementById('redirect');
     await sleep(1000);
     redirect.textContent = 'in 2 seconds...';
