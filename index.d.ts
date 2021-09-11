@@ -5,6 +5,7 @@ declare module 'leeks.js' {
         'bgBlack' | 'bgRed' | 'bgGreen' | 'bgYellow' | 'bgBlue' | 'bgMagenta' | 'bgCyan' | 'bgWhite' |
         'bgBlackBright' | 'bgRedBright' | 'bgGreenBright' | 'bgBlueBright' | 'bgMagentaBright' | 'bgCyanBright' | 'bgWhiteBright' | 'bgYellowBright' |
         'bgGray' | 'bgGrey';
+
     type Keywords = 'black' | 'silver' | 'gray' | 'white' | 'maroon' | 'red' | 'purple' | 'fuchsia' | 'green' | 'lime' | 'olive' |
         'yellow' | 'navy' | 'blue' | 'teal' | 'aqua' | 'aliceblue' | 'antiquewhite' | 'aquamarine' | 'azure' | 'beige' | 'bisque' | 'blanchedalmond' | 'blueviolet' | 'brown' | 'burlywood' | 'cadetblue' |
         'chartreuse' | 'chocolate' | 'coral' | 'cornflowerblue' | 'cornsilk' | 'crimson' | 'cyan' | 'darkblue' | 'darkcyan' | 'darkgoldenrod' | 'darkgray' | 'darkgreen' | 'darkgrey' | 'darkkhaki' |
@@ -57,7 +58,7 @@ declare module 'leeks.js' {
     /** Alias for `supportsColour` */
     export const supportsColor: boolean;
 
-    /** Check if colours are supported (From https://github.com/jorgebucaran/colorette) */
+    /** Check if colours are supported (From https://github.com/jorgebucaran/colorette) (returns false on all browsers) */
     export const supportsColour: boolean;
 
     /**
