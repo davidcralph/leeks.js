@@ -2,17 +2,17 @@
     "name": "leeks.js",
     "version": "0.2.2",
     "description": "Simple ANSI styling for your terminal",
-    "author": "David \"ohlookitsderpy\" Ralph",
+    "author": "David Ralph",
     "license": "MIT",
     "main": "dist/index.js",
     "types": "index.d.ts",
     "bugs": {
-        "url": "https://github.com/davidjcralph/leeks.js/issues"
+        "url": "https://github.com/davidcralph/leeks.js/issues"
     },
     "homepage": "https://leeks.js.org",
     "repository": {
         "type": "git",
-        "url": "https://github.com/davidjcralph/leeks.js"
+        "url": "https://github.com/davidcralph/leeks.js"
     },
     "keywords": [
         "color",
