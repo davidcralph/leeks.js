@@ -7,11 +7,13 @@ import Colours from './data/Colours';
 import Styles from './data/Styles';
 import Keywords from './data/Keywords';
 
+const isNode = typeof process !== 'undefined';
+
 /**
- * Check if colours are supported
+ * Check if colours are supported (returns false on browser)
  * @credit [Colorette](https://github.com/jorgebucaran/colorette)
  */
-const supports: string | boolean = !('NO_COLOR' in process.env) && process.env.FORCE_COLOR !== '0' && (process.env.FORCE_COLOR || process.platform === 'win32' || (process.stdout.isTTY && process.env.TERM && process.env.TERM !== 'dumb'));
+const supports = isNode ? !('NO_COLOR' in process.env) && process.env.FORCE_COLOR !== '0' && (process.env.FORCE_COLOR !== undefined || process.platform === 'win32' || (process.stdout.isTTY && process.env.TERM && process.env.TERM !== 'dumb')) : false;
 
 // Enable/disable support for colours, by default checks for support using the function
 let enabled = supports ? true : false;
