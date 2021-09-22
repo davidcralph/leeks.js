@@ -1,11 +1,11 @@
 {
-    "compilerOptions": {
-      "target": "ESNext",
-      "module": "CommonJS",
-      "lib": ["ES2015", "ES2016", "ES2017", "ES2018", "ES2019", "ES2020", "ESNext"],
-      "outDir": "./dist",
-      "rootDir": "src",
-      "noImplicitUseStrict": true
-    },
-    "include": ["src/**/*"],
-  }
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "CommonJS",
+    "lib": ["ES2015", "ES2016", "ES2017", "ES2018", "ES2019", "ES2020", "ESNext"],
+    "outDir": "./dist",
+    "rootDir": "src",
+    "noImplicitUseStrict": true
+  },
+  "include": ["src/**/*"]
+}

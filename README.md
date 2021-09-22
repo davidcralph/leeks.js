@@ -9,13 +9,4 @@ Simple ANSI styling for your terminal
 * Set alias for colours and styles with leeks.alias()
 
 ## Usage
-See the [documentation](https://docs.davidjcralph.co.uk/#/leeks) and [example](https://github.com/davidjcralph/leeks.js/blob/main/example/test.js)
-
-## Credits
-[ansicolors](https://github.com/thlorenz/ansicolors), [ansistyles](https://github.com/thlorenz/ansistyles), [W3C](https://www.w3.org/TR/2018/REC-css-color-3-20180619/) and [Stack Overflow](https://stackoverflow.com/a/33206814) - Reference
-
-[colorette](https://github.com/jorgebucaran/colorette) - Colour support checking code
-
-[Stack Overflow](https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb) - Hex support
-
-and all the contributors!
+See the [documentation](https://docs.davidcralph.co.uk/#/leeks) and [example](example/test.js)

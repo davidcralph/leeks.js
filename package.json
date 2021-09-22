@@ -1,34 +1,34 @@
 {
-    "name": "leeks.js",
-    "version": "0.2.2",
-    "description": "Simple ANSI styling for your terminal",
-    "author": "David Ralph",
-    "license": "MIT",
-    "main": "dist/index.js",
-    "types": "index.d.ts",
-    "bugs": {
-        "url": "https://github.com/davidcralph/leeks.js/issues"
-    },
-    "homepage": "https://leeks.js.org",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/davidcralph/leeks.js"
-    },
-    "keywords": [
-        "color",
-        "colour",
-        "colors",
-        "colours",
-        "ansi",
-        "style",
-        "styles",
-        "terminal",
-        "console",
-        "lightweight",
-        "rgb",
-        "256"
-    ],
-    "devDependencies": {
-        "@types/node": "^16.0.0"
-    }
+  "name": "leeks.js",
+  "version": "0.2.2",
+  "description": "Simple ANSI styling for your terminal",
+  "author": "David Ralph",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "index.d.ts",
+  "bugs": {
+    "url": "https://github.com/davidcralph/leeks.js/issues"
+  },
+  "homepage": "https://leeks.js.org",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/davidcralph/leeks.js"
+  },
+  "keywords": [
+    "color",
+    "colour",
+    "colors",
+    "colours",
+    "ansi",
+    "style",
+    "styles",
+    "terminal",
+    "console",
+    "lightweight",
+    "rgb",
+    "256"
+  ],
+  "devDependencies": {
+    "@types/node": "^16.9.6"
+  }
 }
