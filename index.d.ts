@@ -58,7 +58,7 @@ declare module 'leeks.js' {
   /** Alias for `supportsColour` */
   export const supportsColor: boolean;
 
-  /** Check if colours are supported (From https://github.com/jorgebucaran/colorette) (returns false on all browsers) */
+  /** Check if colours are supported (returns false on browser) */
   export const supportsColour: boolean;
 
   /**
@@ -122,6 +122,6 @@ declare module 'leeks.js' {
   /** Disable colour support for leeks.js */
   export type disableColours = () => void;
 
-  /** Alias for `disabeColours` */
+  /** Alias for `disableColours` */
   export type disableColors = () => void;
-};
+}
