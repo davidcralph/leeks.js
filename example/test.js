@@ -34,3 +34,5 @@ console.log(leeks.colours.blue`hello there`);
 
 leeks.alias('primary', 'colours', leeks.colours.green);
 console.log(leeks.colours.primary('hi'));
+
+console.log(leeks.short('&!3&0&0 Hello &r &2&o&nworld!&r &lBold&r &nUnderlined&r &oItalic&r &#009999HEX&r &!#009999&0more HEX'));

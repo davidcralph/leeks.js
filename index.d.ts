@@ -106,6 +106,12 @@ declare module 'leeks.js' {
   export const hexBg: (hex: string, t: string) => string;
 
   /**
+   * Add colours and styles to a string using short codes
+   * @param {string} t The text to format
+   */
+  export const short: (t: string) => string;
+
+  /**
     * Set an alias
     * @param {string} name The name of the alias 
     * @param {string} type Either "colours", "colors" or "styles"

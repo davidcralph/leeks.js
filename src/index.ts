@@ -6,6 +6,7 @@
 import Colours from './data/Colours';
 import Styles from './data/Styles';
 import Keywords from './data/Keywords';
+import ShortCodes from './data/ShortCodes';
 
 const isNode = typeof process !== 'undefined';
 
@@ -63,7 +64,7 @@ for (const k in Keywords) {
  */
 export function eightBit(i: string, t: string) {
   if (!enabled) {
-	return t;
+    return t;
   }
 
   return '\033' + `[38;5;${i}m${t}\x1b[0m`;
@@ -76,7 +77,7 @@ export function eightBit(i: string, t: string) {
  */
 export function eightBitBg(i: string, t: string) {
   if (!enabled) {
-	return t;
+    return t;
   }
 
   return '\033' + `[48;5;${i}m${t}\x1b[0m`;
@@ -89,7 +90,7 @@ export function eightBitBg(i: string, t: string) {
  */
 export function rgb(rgb: [number, number, number], t: string) {
   if (!enabled) {
-	return t;
+    return t;
   }
 
   const [r, g, b] = rgb;
@@ -103,7 +104,7 @@ export function rgb(rgb: [number, number, number], t: string) {
  */
 export function rgbBg(rgb: [number, number, number], t: string) {
   if (!enabled) {
-	return t;
+    return t;
   }
 
   const [r, g, b] = rgb;
@@ -133,6 +134,23 @@ export function hexBg(hex: string, t: string) {
 };
 
 /**
+ * Add colours and styles to a string using short codes
+ * @param {string} t The text to format
+ */
+export function short(t: string) {
+  return enabled
+    ? t
+      .replace(/&!?[0-9a-f]/gi, code => `\x1b[${Colours[ShortCodes.colours[code]]}m`)
+      .replace(/&[i-pr]/gi, code => `\x1b[${Styles[ShortCodes.styles[code]]}m`)
+      .replace(/&!?#([0-9A-Fa-f]{3,6})/gi, (match, code) => {
+        const bigint = parseInt(code, 16);
+        const [r, g, b] = [(bigint >> 16) & 255, (bigint >> 8) & 255, bigint & 255];
+        return `\x1b[${match.includes('!') ? '48' : '38'};2;${r};${g};${b}m`;
+      }) + '\x1b[0m'
+    : t;
+}
+
+/**
  * Set an alias
  * @param {string} name The name of the alias 
  * @param {string} type Either "colours", "colors" or "styles"
@@ -140,15 +158,15 @@ export function hexBg(hex: string, t: string) {
  */
 export function alias(name: string, type: string, value: string) {
   switch (type) {
-	case 'colors':
-	case 'colours': 
-	  colours[name] = value; 
-	  break;
-	case 'styles': 
-	  styles[name] = value; 
-	  break;
-	default: 
-	  throw new Error('Must be "colours", "colors" or "styles"');
+  case 'colors':
+  case 'colours': 
+    colours[name] = value; 
+    break;
+  case 'styles': 
+    styles[name] = value; 
+    break;
+  default: 
+    throw new Error('Must be "colours", "colors" or "styles"');
   }
 };
 
