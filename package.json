@@ -1,6 +1,6 @@
 {
   "name": "leeks.js",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Simple ANSI styling for your terminal",
   "author": "David Ralph",
   "license": "MIT",
@@ -29,6 +29,6 @@
     "256"
   ],
   "devDependencies": {
-    "@types/node": "^16.9.6"
+    "@types/node": "^16.10.1"
   }
 }
