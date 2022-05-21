@@ -2,6 +2,7 @@
 dist/
 build/
 .vscode/
+coverage/
 node_modules/
 
 # Files

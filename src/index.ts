@@ -158,16 +158,16 @@ export function short(t: string) {
  */
 export function alias(name: string, type: string, value: string) {
   switch (type) {
-  case 'colors':
-  case 'colours': 
-    colours[name] = value; 
-    break;
-  case 'styles': 
-    styles[name] = value; 
-    break;
-  default: 
-    throw new Error('Must be "colours", "colors" or "styles"');
-  }
+    case 'colors':
+    case 'colours': 
+      colours[name] = value; 
+      break;
+    case 'styles': 
+      styles[name] = value; 
+      break;
+    default: 
+      throw new Error('Must be "colours", "colors" or "styles"');
+    }
 };
 
 /**
