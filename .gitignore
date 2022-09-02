@@ -1,4 +1,12 @@
-.vscode/
-node_modules/
+# Directories
+src/
 dist/
+.vscode/
+.history/
+coverage/
+node_modules/
+coverage/
+
+# Files
+yarn.lock
 package-lock.json
