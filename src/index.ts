@@ -9,17 +9,17 @@ import Keywords from './data/Keywords';
 import ShortCodes from './data/ShortCodes';
 
 const isNode = typeof process !== 'undefined';
+const hasColors = typeof process.stdout?.hasColors !== 'undefined';
 
 /**
  * Check if colours are supported (returns false on browser)
  */
-const supports = isNode ?
-  !('NO_COLOR' in process.env) && process.env.FORCE_COLOR !== '0' // NO_COLOR support and FORCE_COLOR=0 (disabling colour support)
-  && process.stdout.hasColors && process.stdout.hasColors() == true
-  : false;
+const colorsEnabled = !isNode ? false : (
+  (!('NO_COLOR' in process.env) && process.env.FORCE_COLOR !== '0') ||
+  (hasColors ? process.stdout.hasColors() : false)
+);
 
-// Enable/disable support for colours, by default checks for support using the function
-let enabled = supports ? true : false;
+let enabled = colorsEnabled;
 
 /** 
  * Change the colour of the given text (List: https://docs.davidcralph.co.uk/#/leeks) 
@@ -36,7 +36,7 @@ for (const c in Colours) {
  */
 const styles = [];
 for (const s in Styles) {
-  styles[s] = (t: string) => `\x1b[${Styles[s]}m${t}\x1b[0m`;
+  styles[s] = (t: string) => enabled ? `\x1b[${Styles[s]}m${t}\x1b[0m` : t;
 }
 
 /** 
@@ -186,8 +186,8 @@ export function disableColours() {
 
 export {
   colours as colors,
-  supports as supportsColor,
-  supports as supportsColour,
+  colorsEnabled as supportsColor,
+  colorsEnabled as supportsColour,
   enableColours as enableColors,
   disableColours as disableColors,
   colours,
