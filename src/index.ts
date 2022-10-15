@@ -36,7 +36,7 @@ for (const c in Colours) {
  */
 const styles = [];
 for (const s in Styles) {
-  styles[s] = (t: string) => `\x1b[${Styles[s]}m${t}\x1b[0m`;
+  styles[s] = (t: string) => enabled ? `\x1b[${Styles[s]}m${t}\x1b[0m` : t;
 }
 
 /** 

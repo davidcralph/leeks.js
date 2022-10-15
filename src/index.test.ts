@@ -31,6 +31,17 @@ describe('Styles', () => {
       expect(leeks.styles[name]('test')).toBe(expected);
     });
   }
+
+  for (const name of Object.keys(styles)) {
+    test(`Expect style '${name}' to resolve correctly without being enabled`, () => {
+      leeks.disableColours();
+
+      const expected = 'test';
+      expect(leeks.styles[name]('test')).toBe(expected);
+
+      leeks.enableColours();
+    });
+  }
 });
 
 describe('Keywords', () => {
