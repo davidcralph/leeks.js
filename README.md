@@ -9,4 +9,4 @@ Simple ANSI styling for your terminal
 * Set alias for colours and styles with leeks.alias()
 
 ## Usage
-See the [documentation](https://docs.davidcralph.co.uk/#/leeks) and [example](example/test.js)
+See the [documentation](https://docs.davidcralph.co.uk/#/leeks) and [example](example/example.js)
