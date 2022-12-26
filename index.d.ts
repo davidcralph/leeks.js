@@ -117,17 +117,17 @@ declare module 'leeks.js' {
     * @param {string} type Either "colours", "colors" or "styles"
     * @param {string} value The colour/style you want to use, e.g leeks.colours.green
     */
-  export type alias = () => void;
+  export const alias: (name: string, type: 'colours' | 'colors' | 'styled', value: any) => void;
 
   /** Enable colour support for leeks.js */
-  export type enableColours = () => void;
+  export const enableColours: () => void;
 
   /** Alias for `enableColours` */
-  export type enableColors = () => void;
+  export const  enableColors: () => void;
 
   /** Disable colour support for leeks.js */
-  export type disableColours = () => void;
+  export const disableColours: () => void;
 
   /** Alias for `disableColours` */
-  export type disableColors = () => void;
+  export const disableColors: () => void;
 }
