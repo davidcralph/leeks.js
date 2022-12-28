@@ -43,6 +43,5 @@ export function hasColoursSupported() {
   }
 
   // Otherwise, fallback to false
-  console.log('fallback');
   return false;
 }
