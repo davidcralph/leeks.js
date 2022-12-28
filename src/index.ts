@@ -3,23 +3,14 @@
  * @copyright David Ralph 2019-2021
  * @license MIT
  */
+
+import * as detect from './utils/hasColoursSupported';
 import Colours from './data/Colours';
 import Styles from './data/Styles';
 import Keywords from './data/Keywords';
 import ShortCodes from './data/ShortCodes';
 
-const isNode = typeof process !== 'undefined';
-const hasColors = typeof process.stdout?.hasColors !== 'undefined';
-
-/**
- * Check if colours are supported (returns false on browser)
- */
-const colorsEnabled = !isNode ? false : (
-  (!('NO_COLOR' in process.env) && process.env.FORCE_COLOR !== '0') ||
-  (hasColors ? process.stdout.hasColors() : false)
-);
-
-let enabled = colorsEnabled;
+let colorsEnabled = detect.hasColoursSupported();
 
 /** 
  * Change the colour of the given text (List: https://docs.davidcralph.co.uk/#/leeks) 
@@ -27,7 +18,7 @@ let enabled = colorsEnabled;
  */
 const colours = [];
 for (const c in Colours) {
-  colours[c] = (t: string) => enabled ? `\x1b[${Colours[c]}m${t}\x1b[0m` : t;
+  colours[c] = (t: string) => colorsEnabled ? `\x1b[${Colours[c]}m${t}\x1b[0m` : t;
 }
 
 /** 
@@ -36,7 +27,7 @@ for (const c in Colours) {
  */
 const styles = [];
 for (const s in Styles) {
-  styles[s] = (t: string) => enabled ? `\x1b[${Styles[s]}m${t}\x1b[0m` : t;
+  styles[s] = (t: string) => colorsEnabled ? `\x1b[${Styles[s]}m${t}\x1b[0m` : t;
 }
 
 /** 
@@ -45,7 +36,7 @@ for (const s in Styles) {
  */
 const keywords = [];
 for (const k in Keywords) {
-  keywords[k] = (t: string) => enabled ? rgb(Keywords[k], t) : t;
+  keywords[k] = (t: string) => colorsEnabled ? rgb(Keywords[k], t) : t;
 }
 
 /** 
@@ -54,7 +45,7 @@ for (const k in Keywords) {
  */
 const bgKeywords = [];
 for (const k in Keywords) {
-  bgKeywords[k] = (t: string) => enabled ? rgbBg(Keywords[k], t) : t;
+  bgKeywords[k] = (t: string) => colorsEnabled ? rgbBg(Keywords[k], t) : t;
 }
 
 /**
@@ -63,7 +54,7 @@ for (const k in Keywords) {
  * @param {string} t The text to show with the 8-bit colour
  */
 export function eightBit(i: string, t: string) {
-  if (!enabled) {
+  if (!colorsEnabled) {
     return t;
   }
 
@@ -76,7 +67,7 @@ export function eightBit(i: string, t: string) {
  * @param {string} t The text to show with the 8-bit colour
  */
 export function eightBitBg(i: string, t: string) {
-  if (!enabled) {
+  if (!colorsEnabled) {
     return t;
   }
 
@@ -89,7 +80,7 @@ export function eightBitBg(i: string, t: string) {
  * @param {string} t The text to show with the RGB colour
  */
 export function rgb(rgb: [number, number, number], t: string) {
-  if (!enabled) {
+  if (!colorsEnabled) {
     return t;
   }
 
@@ -103,7 +94,7 @@ export function rgb(rgb: [number, number, number], t: string) {
  * @param {string} t The text to show with the RGB colour
  */
 export function rgbBg(rgb: [number, number, number], t: string) {
-  if (!enabled) {
+  if (!colorsEnabled) {
     return t;
   }
 
@@ -138,7 +129,7 @@ export function hexBg(hex: string, t: string) {
  * @param {string} t The text to format
  */
 export function short(t: string) {
-  return enabled
+  return colorsEnabled
     ? t
       .replace(/&!?[0-9a-f]/gi, code => `\x1b[${Colours[ShortCodes.colours[code]]}m`)
       .replace(/&[i-pr]/gi, code => `\x1b[${Styles[ShortCodes.styles[code]]}m`)
@@ -174,15 +165,15 @@ export function alias(name: string, type: string, value: string) {
  * Enable colour support for leeks.js
  */
 export function enableColours() {
-  enabled = true;
-};
+  colorsEnabled = true;
+}
 
 /**
  * Disable colour support for leeks.js
  */
 export function disableColours() {
-  enabled = false;
-};
+  colorsEnabled = false;
+}
 
 export {
   colours as colors,
