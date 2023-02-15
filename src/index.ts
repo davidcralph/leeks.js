@@ -137,7 +137,7 @@ export function short(t: string) {
       const bigint = parseInt(code, 16);
       const [r, g, b] = [(bigint >> 16) & 255, (bigint >> 8) & 255, bigint & 255];
       return `\x1b[${match.includes('!') ? '48' : '38'};2;${r};${g};${b}m`;
-    }) + '\x1b[0m'
+    }) + (colorsEnabled ? '\x1b[0m' : '');
 }
 
 /**
