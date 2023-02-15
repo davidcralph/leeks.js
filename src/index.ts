@@ -129,16 +129,15 @@ export function hexBg(hex: string, t: string) {
  * @param {string} t The text to format
  */
 export function short(t: string) {
-  return colorsEnabled
-    ? t
-      .replace(/&!?[0-9a-f]/gi, code => `\x1b[${Colours[ShortCodes.colours[code]]}m`)
-      .replace(/&[i-pr]/gi, code => `\x1b[${Styles[ShortCodes.styles[code]]}m`)
-      .replace(/&!?#([0-9A-Fa-f]{3,6})/gi, (match, code) => {
-        const bigint = parseInt(code, 16);
-        const [r, g, b] = [(bigint >> 16) & 255, (bigint >> 8) & 255, bigint & 255];
-        return `\x1b[${match.includes('!') ? '48' : '38'};2;${r};${g};${b}m`;
-      }) + '\x1b[0m'
-    : t;
+  return t
+    .replace(/&!?[0-9a-f]/gi, code => colorsEnabled ? `\x1b[${Colours[ShortCodes.colours[code]]}m` : '')
+    .replace(/&[i-pr]/gi, code => colorsEnabled ? `\x1b[${Styles[ShortCodes.styles[code]]}m` : '')
+    .replace(/&!?#([0-9A-Fa-f]{3,6})/gi, (match, code) => {
+      if (!colorsEnabled) return '';
+      const bigint = parseInt(code, 16);
+      const [r, g, b] = [(bigint >> 16) & 255, (bigint >> 8) & 255, bigint & 255];
+      return `\x1b[${match.includes('!') ? '48' : '38'};2;${r};${g};${b}m`;
+    }) + '\x1b[0m'
 }
 
 /**
