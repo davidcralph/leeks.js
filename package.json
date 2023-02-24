@@ -1,6 +1,6 @@
 {
   "name": "leeks.js",
-  "version": "0.2.4",
+  "version": "0.3.0",
   "description": "Simple ANSI styling for your terminal",
   "author": "David Ralph",
   "license": "MIT",
