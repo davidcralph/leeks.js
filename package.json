@@ -1,25 +1,7 @@
 {
   "name": "leeks.js",
-  "version": "0.3.0",
+  "version": "1.0.0",
   "description": "Simple ANSI styling for your terminal",
-  "author": "David Ralph",
-  "license": "MIT",
-  "main": "dist/index.js",
-  "types": "index.d.ts",
-  "bugs": {
-    "url": "https://github.com/davidcralph/leeks.js/issues"
-  },
-  "homepage": "https://leeks.js.org",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/davidcralph/leeks.js"
-  },
-  "scripts": {
-    "test": "jest",
-    "test:watch": "jest --watchAll",
-    "build": "npm run clean && tsc",
-    "clean": "rm -rf dist && rm -rf node_modules && npm i"
-  },
   "keywords": [
     "color",
     "colour",
@@ -34,11 +16,50 @@
     "rgb",
     "256"
   ],
+  "homepage": "https://leeks.js.org",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidcralph/leeks.js.git"
+  },
+  "license": "MIT",
+  "author": "David Ralph",
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.cjs",
+  "types": "./dist/index.d.cts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts --clean",
+    "typecheck": "tsc",
+    "test": "node --test \"src/**/*.test.ts\"",
+    "test:watch": "node --test --watch \"src/**/*.test.ts\"",
+    "lint:pkg": "publint && attw --pack .",
+    "example": "node example/example.mjs && node example/example.cjs",
+    "prepublishOnly": "npm run build"
+  },
   "devDependencies": {
-    "@types/jest": "^30.0.0",
-    "@types/node": "^16.10.1",
-    "jest": "^30.5.2",
-    "ts-jest": "^28.0.2",
-    "typescript": "^7.0.2"
+    "@arethetypeswrong/cli": "^0.18.5",
+    "@types/node": "^22.0.0",
+    "publint": "^0.3.25",
+    "tsup": "^9.0.0",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=22"
   }
 }

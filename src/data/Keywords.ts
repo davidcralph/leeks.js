@@ -150,4 +150,4 @@ export default {
   wheat: [245, 222, 179],
   whitesmoke: [245, 245, 245],
   yellowgreen: [154, 205, 50]
-};
+} satisfies Record<string, [number, number, number]>;

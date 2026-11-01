@@ -1,4 +1,4 @@
-const leeks = require('../dist/index.js'); // Replace with "leeks.js" if not using from the Git repository
+import * as leeks from 'leeks.js';
 
 const error = leeks.colors.red;
 console.log(error('Error - There were no leeks!'));
@@ -6,6 +6,7 @@ console.log(error('Error - There were no leeks!'));
 console.log(leeks.colors.red('Hello') + leeks.colors.green(' I like leeks!'));
 console.log(leeks.colors.bgRed('Hello') + leeks.colors.bgGreen(' I like leeks!'));
 console.log(leeks.colors.blue(leeks.styles.underline('Hello!')));
+console.log(leeks.colours.red(`red ${leeks.colours.blue('blue')} red again ${leeks.styles.bold('bold')} still red`));
 
 console.log(leeks.styles.underline('Hello'));
 
@@ -25,9 +26,11 @@ console.log(leeks.keywords.aqua('Hello'));
 console.log(leeks.bgKeywords.aqua('Hello'));
 
 leeks.disableColours();
+console.log("supportsColor:", leeks.supportsColor);
 console.log(error('test'));
 
 leeks.enableColours();
+console.log("supportsColor:", leeks.supportsColor);
 console.log(error('test'));
 
 console.log(leeks.colours.blue`hello there`);
