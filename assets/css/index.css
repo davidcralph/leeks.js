@@ -1,9 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
-
+/*  TOKENS  */
 :root {
     --primary: #2DCC70;
+    --primary-dark: #14532D;
+    --footer-bg: #555;
 }
 
+/*  BASE  */
 body {
     width: 100%;
     height: 100%;
@@ -12,44 +14,69 @@ body {
     overflow: hidden;
 }
 
-.left {
+h1 {
+    font-weight: 700;
+    text-shadow: 0 1px 1px;
+}
+
+a {
+    transition: opacity 0.2s ease;
+}
+
+a:link,
+a:visited {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+::selection {
+    background-color: var(--primary);
     color: white;
-    border: none;
-    background: var(--primary);
-    padding: 2%;
-    height: 100%;
-    width: 50%;
+    text-shadow: black 1px 1px 1px;
+}
+
+/*  LAYOUT  */
+.left,
+.right {
     position: absolute;
-    right: 46%;
     top: 0;
+    width: 50%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 2%;
+    border: none;
+}
+
+.left {
+    left: 0;
+    background: var(--primary);
+    color: white;
     text-align: left;
 }
-
-.right {
-    color: var(--primary);
-    border: none;
-    background: white;
-    padding: 2%;
-    height: 100%;
-    position: absolute;
-    left: 50%;
-    top: 0;
-    text-align: right;
-}
-
 
 .left a:link,
 .left a:visited {
     color: white;
-    text-decoration: underline;
 }
 
-.right a:link,
-.right a:visited {
+.left ::selection {
+    background-color: white;
+    color: var(--primary-dark);
+    text-shadow: none;
+}
+
+.right {
+    left: 50%;
+    background: white;
     color: var(--primary);
-    text-decoration: underline;
+    text-align: right;
 }
 
+/*  LOGO  */
 .logo {
     width: 30%;
     padding: 2%;
@@ -65,6 +92,7 @@ body {
     background: var(--primary);
 }
 
+/*  TEXT  */
 .text {
     margin-top: 4%;
 }
@@ -77,6 +105,13 @@ body {
     margin-left: 6%;
 }
 
+#title-by {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+/*  ICONS  */
 .icons {
     list-style-type: none;
     margin: 0;
@@ -86,96 +121,57 @@ body {
 .icons li {
     display: inline;
     font-size: 1.8rem;
+}
+
+.icons li + li {
     margin-left: 1.8%;
 }
 
-::selection {
-    background-color: var(--primary);
+/*  FOOTER  */
+#footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.5rem 2%;
+    background-color: var(--footer-bg);
     color: white;
-    text-shadow: black 1px 1px 1px;
+    text-align: center;
+    font-size: 0.8rem;
+    z-index: 100;
 }
 
-#title-by {
-    display: block;
-    font-size: 1.2rem;
+#footer p {
+    margin: 0.2rem 0;
 }
 
-h1 {
-    text-shadow: 0 1px 1px;
-}
-
+/*  MOBILE  */
 @media only screen and (max-width: 800px) {
     body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        min-height: 100dvh;
         overflow-y: scroll;
     }
 
-    .left {
+    .left,
+    .right,
+    #footer {
         position: static;
+    }
+
+    .left,
+    .right {
         width: 100%;
     }
 
     .right {
-        position: relative;
-        width: 100%;
-        left: -4%;
+        flex: 1;
     }
 
     .logo {
         width: 20%;
     }
-}
-
-#footer-btn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 99;
-    border: none;
-    outline: none;
-    background-color: var(--primary);
-    color: white;
-    cursor: pointer;
-    padding: 15px;
-    border-radius: 5px;
-    font-size: 1rem;
-    box-shadow: black 1px 1px 5px;
-}
-
-#footer-btn:hover {
-    opacity: 0.8;
-}
-
-#footer {
-    visibility: hidden;
-    width: 80%;
-    /* float: middle; */
-    background-color: #555;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 2%;
-    position: absolute;
-    z-index: 100;
-    left: 8%;
-    bottom: 10%;
-    opacity: 0.95;
-
-}
-
-@media only screen and (max-width: 800px) {
-    #footer {
-        width: 90%;
-        left: 3%;
-    }
-}
-
-a:link,
-a:visited {
-    color: var(--primary);
-    text-decoration: underline;
-}
-
-
-a:hover {
-    color: rgb(211, 211, 211) !important;
 }

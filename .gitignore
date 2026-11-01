@@ -4,8 +4,8 @@ dist/
 .vscode/
 .history/
 coverage/
+.impeccable/
 node_modules/
-coverage/
 
 # Files
 yarn.lock
