@@ -1,3 +1,6 @@
+import type Colours from './Colours.ts';
+import type Styles from './Styles.ts';
+
 export default {
   colours: {
     '&!0': 'bgBlack',
@@ -44,4 +47,7 @@ export default {
     '&p': 'overline',
     '&r': 'reset'
   }
+} satisfies {
+  colours: Record<string, keyof typeof Colours>;
+  styles: Record<string, keyof typeof Styles>;
 };

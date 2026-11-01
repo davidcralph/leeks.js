@@ -1,44 +1,42 @@
-const isNode = typeof process !== 'undefined';
-const truthy = new Set(['yes', 'true', '1', 'enable', 'e', 'enabled']);
+const truthy = new Set(['', 'yes', 'true', '1', '2', '3', 'enable', 'e', 'enabled']);
 const falsy = new Set(['no', 'false', '0', 'disable', 'd', 'disabled']);
+const ciServices = ['GITHUB_ACTIONS', 'TRAVIS', 'CIRCLECI', 'APPVEYOR', 'GITLAB_CI', 'BUILDKITE', 'DRONE'];
 
 /**
- * Method to detect if the current host has colors enabled or not. The result is cached on the first
- * invocation of {@link hasColoursSupported}, the rest will just return that variable.
+ * Detect if the current host supports colours.
  */
-export function hasColoursSupported() {
+export function hasColoursSupported(): boolean {
   // Check if we have the `process` global available. If not, let's not enable it.
-  if (!isNode) {
+  if (typeof process === 'undefined') {
     return false;
   }
 
-  // Check if the `NO_COLOR` system enviornment variable is available.
-  if ('NO_COLOR' in process.env) {
+  const env = process.env;
+
+  // `NO_COLOR` disables colours when set to a non-empty value (https://no-color.org)
+  if (env.NO_COLOR) {
     return false;
   }
 
-  // Check if `FORCE_COLORS` exists and see if it is truthy.
-  if ('FORCE_COLORS' in process.env) {
-    // Check if it is a truthy value
-    if (truthy.has(process.env.FORCE_COLORS)) {
+  // `FORCE_COLOR` (and the legacy `FORCE_COLORS`) override detection
+  const force = env.FORCE_COLOR ?? env.FORCE_COLORS;
+  if (force !== undefined) {
+    if (truthy.has(force)) {
       return true;
     }
 
-    // Check if `FORCE_COLORS` was a falsy value
-    if (falsy.has(process.env.FORCE_COLORS)) {
-      return true;
+    if (falsy.has(force)) {
+      return false;
     }
   }
 
   // Check if any CI service supports colours
-  if ('CI' in process.env) {
-    return ['GITHUB_ACTIONS', 'TRAVIS', 'CIRCLECI', 'APPVEYOR', 'GITLAB_CI', 'BUILDKITE', 'DRONE'].some(i => i in process.env) || (
-      typeof process.env.CI_NAME !== undefined && process.env.CI_NAME === 'codeship'
-    );
+  if ('CI' in env) {
+    return ciServices.some(i => i in env) || env.CI_NAME === 'codeship';
   }
 
   // Check if the process' standard output has colours enabled from the `hasColors` function.
-  if (typeof process.stdout?.hasColors !== 'undefined') {
+  if (typeof process.stdout?.hasColors === 'function') {
     return process.stdout.hasColors();
   }
 
